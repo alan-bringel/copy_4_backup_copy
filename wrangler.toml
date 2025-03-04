@@ -1,6 +1,9 @@
 name = "parallel-reading"
 compatibility_date = "2023-05-30"
 
+# Configuração de compatibilidade para Workers
+compatibility_flags = ["nodejs_compat"]
+
 # Usar a pasta functions como base para as funções
 [build]
 command = ""
@@ -8,6 +11,9 @@ command = ""
 [build.upload]
 format = "modules"
 main = "./functions/_middleware.js" 
+
+# Configuração específica da plataforma
+node_compat = true
 
 # Definir rotas para as funções específicas
 [[routes]]
