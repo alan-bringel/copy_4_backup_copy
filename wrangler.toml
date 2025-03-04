@@ -1,33 +1,30 @@
 name = "parallel-reading"
 compatibility_date = "2023-05-30"
-
-# Configuração de compatibilidade para Workers
 compatibility_flags = ["nodejs_compat"]
+node_compat = true
+
+# Usar o campo main no nível superior (recomendação do Cloudflare)
+main = "./functions/_middleware.js"
+
+# Configuração para Cloudflare Pages Functions
+[functions]
+directory = "functions"
 
 # Usar a pasta functions como base para as funções
 [build]
 command = ""
 
-[build.upload]
-format = "modules"
-main = "./functions/_middleware.js" 
-
 # Configuração específica da plataforma
 node_compat = true
 
 # Definir rotas para as funções específicas
-[[routes]]
-pattern = "/api/reviews"
-module = "./functions/api/reviews.js"
+routes = [
+  { pattern = "/api/reviews", module = "./functions/api/reviews.js" },
+  { pattern = "/api/image-proxy", module = "./functions/api/image-proxy.js" },
+  { pattern = "/api/google-image", module = "./functions/api/image-proxy.js" }
+]
 
-[[routes]]
-pattern = "/api/image-proxy"
-module = "./functions/api/image-proxy.js"
-
-[[routes]]
-pattern = "/api/google-image"
-module = "./functions/api/image-proxy.js"
-
+# Variáveis de ambiente
 [vars]
 ENVIRONMENT = "production"
 FIREBASE_PROJECT_ID = "reviews-smartplay-br"
