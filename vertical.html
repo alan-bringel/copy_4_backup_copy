@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Adicione estas meta tags aqui -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Parallel Text Reader - Vertical Mode</title>
+    <link rel="stylesheet" href="lesson.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <main>
+        <!-- Adicione esta linha abaixo, logo após a abertura da tag main -->
+        <div id="verse-counter" class="verse-counter">1/1</div>
+        
+        <!-- Estrutura ajustada para corresponder ao modo vertical da lesson.html -->
+        <div id="text-container" class="verse-by-verse fade-in">
+            <!-- Primeiro: contêiner do texto em inglês -->
+            <div class="text-column">
+                <div id="english-text" class="text-content">Carregando legendas em inglês...</div>
+            </div>
+            
+            <!-- Segundo: botão de mostrar tradução -->
+            <div id="translation-toggle" style="display: block; color: rgba(238, 238, 238, 0.3);">
+                show translation
+            </div>
+            
+            <!-- Terceiro: contêiner da tradução (inicialmente oculto) -->
+            <div class="text-column translation-container" style="opacity: 0; display: none;">
+                <div id="portuguese-text" class="text-content">Carregando legendas em português...</div>
+            </div>
+        </div>
+    </main>
+    
+    <div class="bottom-container">
+        <div class="button-container-fixed">
+            <button id="play-english" class="play-button" aria-label="Play English" style="color: rgb(216, 101, 114);"></button>
+            <button id="play-alternate" class="play-button" aria-label="Play Alternate"></button>
+            <button id="toggle-display" class="play-button" aria-label="Toggle Display">
+                <span style="display: block; width: 20px; height: 2px; background-color: #d86572; margin: 2px 0;"></span>
+                <span style="display: block; width: 20px; height: 2px; background-color: #5582ec; margin: 2px 0;"></span>
+            </button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

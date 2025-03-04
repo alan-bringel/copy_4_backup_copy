@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Adicione estas meta tags aqui -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style"="black-translucent">
+    <title>Parallel Reading</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./reviews-section.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <script>
+        function handleCardClick(lessonId) {
+            // Verificar se o salmo tem conteúdo antes de navegar
+            fetch('psalm-config.json')
+                .then(response => response.json())
+                .then(config => {
+                    if (config[lessonId] === 0) {
+                        // Mostrar popup de acesso limitado
+                        document.getElementById('access-limit-popup').classList.add('popup-open');
+                        return;
+                    }
+                    window.location.href = `lesson.html?lessonId=${lessonId}`;
+                })
+                .catch(() => {
+                    // Se não conseguir verificar, navega normalmente
+                    window.location.href = `lesson.html?lessonId=${lessonId}`;
+                });
+        }
+    </script>
+</head>
+<body>
+    <div class="user-login-container">
+        <div id="login-button" class="user-login-button">
+            <img src="images/login-icon.svg" alt="Login" class="login-icon" />
+        </div>
+    </div>
+    <header>
+        <div class="header-container">
+            <h1><strong>Parallel Reading</strong></h1>
+            <p><span style="opacity: 0.7;">Aprendendo Inglês com a Bíblia</span></p>
+        </div>
+    </header>
+    <main>
+        <div class="scroll-wrapper">
+            <div class="scroll-container">
+                <div class="lessons-container">
+                    <div class="lesson-card" data-number="1" onclick="handleCardClick(1)"><span>Psalm 1</span></div>
+                    <div class="lesson-card" data-number="2" onclick="handleCardClick(2)"><span>Psalm 2</span></div>
+                    <div class="lesson-card" data-number="3" onclick="handleCardClick(3)"><span>Psalm 3</span></div>
+                    <div class="lesson-card" data-number="4" onclick="handleCardClick(4)"><span>Psalm 4</span></div>
+                </div>
+            </div>
+            <div class="divider"></div> <!-- Linha horizontal -->
+            <div class="scroll-container">
+                <div class="lessons-container">
+                    <div class="lesson-card" data-number="5" onclick="handleCardClick(5)"><span>Psalm 5</span></div>
+                    <div class="lesson-card" data-number="6" onclick="handleCardClick(6)"><span>Psalm 6</span></div>
+                    <div class="lesson-card" data-number="7" onclick="handleCardClick(7)"><span>Psalm 7</span></div>
+                    <div class="lesson-card" data-number="8" onclick="handleCardClick(8)"><span>Psalm 8</span></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Seção de reviews integrada -->
+    <section class="reviews-section">
+        <div class="container-icons-mensagem">
+            <img src="images/icons-mensagem.png" alt="mensagem" class="img-icons-mensagem">
+        </div>
+
+        <div class="container"> 
+            <div class="stars">
+                <span class="star" onclick="setRating(1)">☆</span>
+                <span class="star" onclick="setRating(2)">☆</span>
+                <span class="star" onclick="setRating(3)">☆</span>
+                <span class="star" onclick="setRating(4)">☆</span>
+                <span class="star" onclick="setRating(5)">☆</span>
+            </div>
+
+            <h1>Review</h1>
+
+            <div class="login-container">
+                <div id="buttonDiv" class="login-button"></div>
+                <p id="fullName"></p>
+                <p id="sub"></p>
+                <p id="given_name"></p>
+                <p id="family_name"></p>
+                <p id="email"></p>
+                <p id="verifiedEmail"></p>
+                <img id="picture" />
+            </div>
+
+            <input type="hidden" id="rating" name="rating" value="0">
+
+            <div class="logo-container">
+                <div class="logo-button">
+                    <img src="images/logo-google.png" alt="Review Button" class="google-logo">
+                </div>
+            </div>
+
+            <div class="button-container">
+                <button class="review-button" onclick="toggleFormulario()">
+                    <img src="images/button-review.png" alt="Review Button">
+                </button>
+            </div>
+        </div>
+
+        <div class="container-formulario" id="containerFormulario">
+            <form id="review-form" onsubmit="submitReview(event)">
+                <input type="text" id="name" name="name" placeholder="Nome" required><br><br>
+                <textarea id="comment" name="comment" rows="4" placeholder="Insira seu comentário aqui..." required></textarea><br><br>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+
+        <div class="container-response-output" id="response-output">
+            <div class="estatisticas-header">  
+                <h2>Resumo Reviews</h2>
+                <div class="barras-container">
+                    <div class="barra-container">
+                        <div class="barra-avaliacao">
+                            <div class="cinco-estrelas"></div>
+                        </div>
+                        <p class="numero-barra-5">5</p>
+                    </div>
+                    <div class="barra-container">
+                        <div class="barra-avaliacao">
+                            <div class="quatro-estrelas"></div>
+                        </div>
+                        <p class="numero-barra-4">4</p>
+                    </div>
+                    <div class="barra-container">
+                        <div class="barra-avaliacao">
+                            <div class="tres-estrelas"></div>
+                        </div>
+                        <p class="numero-barra-3">3</p>
+                    </div>
+                    <div class="barra-container">
+                        <div class="barra-avaliacao">
+                            <div class="duas-estrelas"></div>
+                        </div>
+                        <p class="numero-barra-2">2</p>
+                    </div>
+                    <div class="barra-container">
+                        <div class="barra-avaliacao">
+                            <div class="uma-estrela"></div>
+                        </div>
+                        <p class="numero-barra-1">1</p>
+                    </div>
+                </div>
+                
+                <div class="rating-summary">
+                    <h3 id="total-rating">5.0</h3>
+                    <div class="star-rating-container">
+                        <img id="star-rating-image" src="images/estrelas/estrela-vazia.png" alt="Avaliação de estrelas">
+                    </div>
+                    <p class="numero-total-de-reviews" id="total-reviews">reviews</p>
+                </div>
+            </div>
+            
+            <div class="reviews-list">
+                <!-- Aqui serão inseridos dinamicamente os reviews -->
+            </div>
+        </div>
+    </section>
+    
+    <!-- Popup de limite de acesso -->
+    <div id="access-limit-popup" class="popup-overlay">
+        <div class="popup-content">
+            <button class="popup-close">&times;</button>
+            <h2>Acesso Ilimitado</h2>
+            <p>A Lição 1 é gratuita. O acesso ilimitado de forma mensal ou anual a todas as lições requer um plano mensal ou anual.</p>
+            <div class="popup-buttons">
+                <div class="popup-buttons-column">
+                    <div class="price-button-container">
+                        <button class="popup-button secondary">1 Mês, R$ 12,89.</button>
+                    </div>
+                    <div class="price-button-container">
+                        <button class="popup-button secondary">12 Meses, R$ 103,12.</button>
+                    </div>
+                </div>
+                <button class="popup-button">Assinar Agora</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts para controlar os popups -->
+    <script>
+        // Script para garantir o funcionamento do botão de fechar do popup
+        document.addEventListener('DOMContentLoaded', function() {
+            const closeButton = document.querySelector('.popup-close');
+            const popup = document.getElementById('access-limit-popup');
+            
+            if (closeButton && popup) {
+                closeButton.addEventListener('click', function() {
+                    popup.classList.remove('popup-open');
+                });
+            }
+        });
+    </script>
+
+    <!-- Scripts externos para autenticação -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/build/jwt-decode.min.js"></script>
+    
+    <!-- Script para a funcionalidade de reviews -->
+    <script src="reviews.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
+
+<style>
+.user-login-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+}
+
+.user-login-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(204, 204, 204, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.user-login-button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+.login-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.user-login-button img.user-avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+</style>

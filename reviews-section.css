@@ -1,0 +1,2078 @@
+.container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 25px; /* Remove o arredondamento dos cantos do contêiner */
+    box-shadow: 0 0 0px rgba(0, 0, 0, 0.0); /* Ajuste a opacidade conforme necessário */
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto; /* Centraliza o container horizontalmente */
+    text-align: center;
+    margin-bottom: 40px;
+    padding-top: 90px;
+    margin-top: 0px;
+    position: relative; /* Necessário para o pseudo-elemento */
+}
+
+.container::before {
+    content: "";
+    position: absolute;
+    top: 42px;
+    left: 22px;
+    right: 22px;
+    bottom: 40px;
+    margin: 0 auto; /* Centraliza o container horizontalmente */
+    border: 1px solid rgb(220, 215, 215); /* Adiciona o contorno */
+    border-radius: 25px; /* Define o arredondamento do contorno */
+    pointer-events: none; /* Garante que o pseudo-elemento não interfira nas interações do contêiner */
+}
+
+.container-response-output {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 25px; /* Remove o arredondamento dos cantos do contêiner */
+    box-shadow: 0 0 0px rgba(0, 0, 0, 0.0); /* Ajuste a opacidade conforme necessário */
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+    margin-bottom: -7px;
+    margin: 0 auto; /* Centraliza o container horizontalmente */
+    padding-top: 50px;
+    margin-top: 7px; /*Parâmetro para aproximar os conteiners um do outro*/
+    position: relative; /* Necessário para o pseudo-elemento */
+}
+
+.container-response-output::before {
+    content: "";
+    position: absolute;
+    top: 42px;
+    left: 20px;
+    right: 20px;
+    margin: 0 auto; /* Centraliza o container horizontalmente */
+    bottom: 40px;
+    border: 0px solid rgb(220, 215, 215); /* Adiciona o contorno */
+    border-radius: 25px; /* Define o arredondamento do contorno */
+    pointer-events: none; /* Garante que o pseudo-elemento não interfira nas interações do contêiner */
+}
+
+.container-formulário {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 25px;
+    box-shadow: 0 0 0px rgba(0, 0, 0, 0.0);
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+    margin-bottom: 40px;
+    margin-top: -30px; /*Parâmetro para aproxima conteiners*/
+    padding-top: 35px;
+    padding-bottom: 35px;
+}
+
+h1 {
+    font-size: 22px;
+    font-weight: normal;
+    color: #000000;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center; /* Centraliza o texto horizontalmente */
+    padding-bottom: 102px; /* Espaçamento inferior (pode ser ajustado conforme necessário) */
+}
+
+
+.stars {
+    font-size: 23px;
+    margin-bottom: 12px;
+    text-align: center;
+    padding-bottom: 9px;
+    margin-top: -35px;
+    gap: 0;
+}
+
+.stars .star {
+    color: #fbbf1c;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.stars .star.checked {
+    color: #fbbf1c;
+}
+
+#review-form {
+    text-align: center;
+    border-radius: 25px;
+}
+
+#review-form input[type="text"],
+#review-form textarea,
+#review-form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 17px;
+    box-sizing: border-box;
+    font-size: 16px;
+    outline: none;
+    color: #000000;
+    background-color: #ffffff;
+    font-family: 'Open Sans', sans-serif; /* Adicionado */
+    margin-bottom: -3px; 
+}
+
+#review-form textarea {
+    resize: vertical;
+    margin-bottom: -5px;
+}
+
+#review-form textarea::placeholder,
+#review-form input[type="text"]::placeholder {
+    color: #999;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+#review-form button {
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+    font-weight: bold;
+    padding: 9px 20px;
+    background-color: #ffffff;
+    border: 0.5px solid #1a6aff;
+    color: #1a6aff;
+    width: 100%;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#review-form button:hover {
+    background-color: #1a6aff;
+    border-color: #1a6aff;
+    color: #ffffff;
+
+}
+
+#review-form button:active {
+    background-color: #1a6aff;
+    border-color: #1a6aff;
+    color: #ffffff;
+}
+
+.review-container {
+    width: 90%;
+    max-width: 600px;
+    background-color: rgba(2, 2, 2, 0);
+    padding: 20px;
+    border-radius: 25px;
+    margin: 10px auto;
+    text-align: left;
+    box-shadow: 0 0 0px rgba(0, 0, 0, 0.0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.review {
+    background-color: #f8f8f8;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+    padding: 20px;
+    border-radius: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.0);
+    width: 91.5%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.circle-border {
+    width: 44px;
+    height: 44px;
+    border-radius: 100%;
+    position: absolute;
+    top: 12px;
+    left: 18px;
+    z-index: 2;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: transparent; /* Preenchimento transparente */
+    border: 2px solid #f8f8f8;
+    box-sizing: border-box; /* Para incluir a borda no cálculo do tamanho */
+    box-shadow: 0 0 0 0.5px #f8f8f8; /* Ajuste o valor '-2px' para ocultar 2px do contorno */
+}
+
+.circle-border2 {
+    width: 44px;
+    height: 44px;
+    border-radius: 100%;
+    position: absolute;
+    top: 12px;
+    left: 18px;
+    z-index: 2;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: transparent; /* Preenchimento transparente */
+    box-sizing: border-box; /* Para incluir a borda no cálculo do tamanho */
+    box-shadow: 0 0 0 0.5px #f8f8f8 inset; /* Ajuste o valor '-2px' para ocultar 2px do contorno */
+}
+
+.circle {
+    width: 44px;
+    height: 44px;
+    font-size: 16px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #ffffff;
+    position: absolute;
+    top: 12px;
+    left: 18px;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+    background-repeat: no-repeat;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.image-loaded {
+    animation: fadeIn 0.3s ease-in;
+}
+
+.review .stars {
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-align: left;
+    color: #fbbf1c;
+    margin-top: 40px;
+}
+
+.review .stars .star {
+    color: #fbbf1c;
+}
+
+.review p {
+    margin: 10px 0;
+}
+
+.review .name-date {
+    font-size: 15px;
+    color: #333;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+    margin-top: -95px;
+    margin-bottom: 20px;
+}
+
+.review .date {
+    font-size: 12px;
+    color: #333;
+    opacity: 50%;
+    margin-top: -20px;
+    text-align: left;
+    margin-left: 50px;
+}
+
+.review .comment {
+    font-size: 15px;
+    margin-left: 0px;
+    text-align: left;
+    position: relative;
+    margin-top: 40px;
+}
+
+.verified-icon {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-left: 5px;
+  background-image: url('/images/icon-verification-48.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+}
+
+/*
+
+.verified-icon::after {
+    content: '✔';
+    font-size: 5px;
+    color: #725bc2;
+    
+}
+    
+*/
+
+.container-icons-mensagem {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    height: 0vh; /* Altura do contêiner para centralização vertical */
+    position: relative;
+    margin-top: 7px; /* usar esse parámetro no conteiners para apaximar um do outro.*/
+}
+
+.container-icons-mensagem img {
+    width: 210px; /* Defina a largura desejada */
+    height: auto; /* A altura será ajustada automaticamente para manter a proporção */
+    position: absolute;
+    z-index: 1; /* Coloca a imagem acima do contêiner */
+    margin-top: -83px; /* Ajuste conforme necessário para posicionar mais para cima */
+    margin-bottom: -485px; /* Ajuste conforme necessário para posicionar mais para baixo */
+}
+
+@media (max-width: 768px) {
+    .container-icons-mensagem {
+        display: flex;
+        justify-content: center; /* Centraliza horizontalmente */
+        align-items: center; /* Centraliza verticalmente */
+        height: 0vh; /* Altura do contêiner para centralização vertical */
+        position: relative;
+        margin-top: 7px; /* usar esse parámetro no conteiners para apaximar um do outro.*/
+    }
+
+    .container-icons-mensagem img {
+        width: 200px; /* Defina a largura desejada */
+        height: auto; /* A altura será ajustada automaticamente para manter a proporção */
+        position: absolute;
+        z-index: 1; /* Coloca a imagem acima do contêiner */
+        margin-top: -83px; /* Ajuste conforme necessário para posicionar mais para cima */
+        margin-bottom: -495px; /* Ajuste conforme necessário para posicionar mais para baixo */
+    }  
+}
+
+@media (max-width: 480px) {
+    .container-icons-mensagem {
+        display: flex;
+        justify-content: center; /* Centraliza horizontalmente */
+        align-items: center; /* Centraliza verticalmente */
+        height: 0vh; /* Altura do contêiner para centralização vertical */
+        position: relative;
+        margin-top: 7px; /* usar esse parámetro no conteiners para apaximar um do outro.*/
+    }
+
+    .container-icons-mensagem img {
+        width: 200px; /* Defina a largura desejada */
+        height: auto; /* A altura será ajustada automaticamente para manter a proporção */
+        position: absolute;
+        z-index: 1; /* Coloca a imagem acima do contêiner */
+        margin-top: -83px; /* Ajuste conforme necessário para posicionar mais para cima */
+        margin-bottom: -495px; /* Ajuste conforme necessário para posicionar mais para baixo */
+    }  
+}
+
+
+h2 {
+    font-size: 15px;
+    font-weight: normal;
+    padding-bottom: 10px;
+    color: #000000;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* 5.0 */
+
+.estatisticas h3 {
+    font-size: 1.0rem;
+    font-weight: bold;
+    color: #000000;
+    font-family: 'Open Sans', sans-serif;
+    position: absolute;
+    top: 30%; /* Ajuste conforme necessário */
+    left: 88%; /* Centraliza horizontalmente em relação ao contêiner pai */
+    transform: translateX(-50%); /* Ajusta para que o ponto de referência seja o centro do texto */
+}
+
+/* Ajustes específicos para diferentes tamanhos de tela */
+@media (max-width: 768px) {
+    .estatisticas h3 {
+        top: 30%; /* Ajuste conforme necessário */
+        left: 88%; /* Centraliza horizontalmente */
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 480px) {
+    .estatisticas h3 {
+        top: 30%; /* Ajuste conforme necessário */
+        left: 83%; /* Centraliza horizontalmente */
+        transform: translateX(-50%);
+    }
+}
+
+/* Estrelas do Resumo Reviews ★ ★ ★ ★ ★ */
+
+.estatisticas .star-rating-container {
+    position: absolute;
+    top: 54%;
+    left: 88%;
+    transform: translateX(-50%);
+}
+
+/* Ajuste o tamanho das imagens das estrelas */
+.estatisticas .star-rating-container img {
+    width: 120px; /* Defina o tamanho desejado em pixels */
+    height: auto; /* Mantém a proporção da imagem */
+}
+
+
+@media (max-width: 768px) {
+    .estatisticas .star-rating-container {
+        position: absolute;
+        top: 54%;
+        left: 88%;
+        transform: translateX(-50%);
+    }
+
+    /* Ajuste o tamanho das imagens das estrelas */
+    .estatisticas .star-rating-container img {
+        width: 120px; /* Defina o tamanho desejado em pixels */
+        height: auto; /* Mantém a proporção da imagem */
+    }
+}
+
+@media (max-width: 480px) {
+    .estatisticas .star-rating-container {
+        position: absolute;
+        top: 54%;
+        left: 83%;
+        transform: translateX(-50%);
+    }
+
+    /* Ajuste o tamanho das imagens das estrelas */
+    .estatisticas .star-rating-container img {
+        width: 115px; /* Defina o tamanho desejado em pixels */
+        height: auto; /* Mantém a proporção da imagem */
+    }
+}
+
+/* Número total de reviews */
+
+.estatisticas .numero-total-de-reviews {
+    position: absolute; /* Permite posicionar o elemento */
+    font-size: 0.8rem;
+    font-weight: normal;
+    color: #424242;
+    font-family: 'Open Sans', sans-serif;
+    position: absolute;
+    text-align: center;
+    top: 63%; /* Ajuste conforme necessário */
+    left: 88%; /* Centraliza horizontalmente em relação ao contêiner pai */
+    transform: translateX(-50%); /* Ajusta para que o ponto de referência seja o centro do texto */
+    white-space: nowrap; /* Impede que o texto quebre em várias linhas */
+}
+
+@media (max-width: 768px) {
+    .estatisticas .numero-total-de-reviews {
+        position: absolute;
+        font-size: 0.8rem;
+        font-weight: normal;
+        color: #424242;
+        font-family: 'Open Sans', sans-serif;
+        position: absolute;
+        text-align: center;
+        top: 63%; /* Ajuste conforme necessário */
+        left: 88%; /* Centraliza horizontalmente em relação ao contêiner pai */
+        transform: translateX(-50%); /* Ajusta para que o ponto de referência seja o centro do texto */
+        white-space: nowrap; /* Impede que o texto quebre em várias linhas */
+    }
+}
+
+@media (max-width: 480px) {
+    .estatisticas .numero-total-de-reviews {
+        position: absolute;
+        font-size: 0.9rem;
+        font-weight: normal;
+        color: #424242;
+        font-family: 'Open Sans', sans-serif;
+        position: absolute;
+        text-align: center;
+        top: 61%; /* Ajuste conforme necessário */
+        left: 83%; /* Centraliza horizontalmente em relação ao contêiner pai */
+        transform: translateX(-50%); /* Ajusta para que o ponto de referência seja o centro do texto */
+        white-space: nowrap; /* Impede que o texto quebre em várias linhas */
+    }
+}
+
+/* Conteiner das estatísticas */
+
+.estatisticas {
+    position: relative;
+    background-color: #ffffff;
+    padding: 20px;
+    padding-bottom: 30px; /* Aumentando a altura da parte inferior */
+    border-radius: 25px;
+    box-shadow: 0 0 0px rgba(0, 0, 0, 0.0);
+    width: 90%; /* Largura do conteiner */
+    max-width: 600px;
+    text-align: center;
+    margin-bottom: 5px;
+    margin-top: -30px; /* usar esse parámetro no conteiners para apaximar um do outro.*/ 
+}
+
+
+/* Barras da estatística */
+
+.barra-avaliacao {
+    width: 75%;
+    background-color: #e0e0e0;
+    margin: 10px 0;
+    border-radius: 5px;
+    margin-left: 18px;
+}
+
+@media (max-width: 768px) {
+    .barra-avaliacao {
+        width: 74%;
+        background-color: #e0e0e0;
+        margin: 10px 0;
+        border-radius: 5px;
+        margin-left: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .barra-avaliacao {
+        width: 63%;
+        background-color: #e0e0e0;
+        margin: 10px 0;
+        border-radius: 5px;
+        margin-left: 18px;
+    }
+}
+
+/* Número 5 da barra de avaliacão 1 */
+
+.estatisticas .numero-barra-5 {
+    position: absolute; /* Permite posicionar o elemento */
+    top: 57px; /* Move o elemento para cima */
+    font-size: 12px;
+    font-weight: normal;
+    text-align: left;
+    
+    padding-bottom: 0px;
+    color: #000000;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Número 4 da barra de avaliacão 1 */
+
+.estatisticas .numero-barra-4 {
+    position: absolute; /* Permite posicionar o elemento */
+    top: 72px; /* Move o elemento para cima */
+    font-size: 12px;
+    font-weight: normal;
+    text-align: left;
+   
+    color: #000000;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Número 3 da barra de avaliacão 1 */
+
+.estatisticas .numero-barra-3 {
+    position: absolute; /* Permite posicionar o elemento */
+    top: 87px; /* Move o elemento para cima */
+    font-size: 12px;
+    font-weight: normal;
+    text-align: left;
+    
+    color: #000000;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Número 2 da barra de avaliacão 1 */
+
+.estatisticas .numero-barra-2 {
+    position: absolute; /* Permite posicionar o elemento */
+    top: 102px; /* Move o elemento para cima */
+    font-size: 12px;
+    font-weight: normal;
+    text-align: left;
+   
+    color: #000000;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Número 1 da barra de avaliacão 1 */
+
+.estatisticas .numero-barra-1 {
+    position: absolute; /* Permite posicionar o elemento */
+    top: 117px; /* Move o elemento para cima */
+    font-size: 12px;
+    font-weight: normal;
+    text-align: left;
+    color: #000000;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Barras de avalicão que são preenchidas em porcentagem para representar visualmente um resumo da estatística */
+
+.barra-avaliacao div {
+    height: 5px; /* Altura mais fina */
+    border-radius: 5px;
+    transition: width 0.5s;
+    margin-bottom: 10px; /* Espaçamento entre as barras */
+}
+
+.cinco-estrelas { background-color: #fbbf1c; width: 0%; } /* Amarelo e ajuste da largura */
+.quatro-estrelas { background-color: #fbbf1c; width: 0%; } /* Amarelo e ajuste da largura */
+.tres-estrelas { background-color: #fbbf1c; width: 0%; } /* Amarelo e ajuste da largura */
+.duas-estrelas { background-color: #fbbf1c; width: 0%; } /* Amarelo e ajuste da largura */
+.uma-estrela { background-color: #fbbf1c; width: 0%; } /* Amarelo e ajuste da largura */
+
+
+
+/* Estilos para a div contêiner do botão */
+.login-container {
+    position: relative; /* Permite posicionamento absoluto dentro do contêiner */
+    width: 100%; /* Ocupa toda a largura disponível */
+    height: 0.1vh; /* Ocupa a altura total da viewport */
+    z-index: 9999; /* Coloca o ícone na frente de todos os outros elementos */
+    opacity: 0%;
+}
+
+/* Estilos para o botão de review */
+.login-button {        
+    background: none; /* Remove o fundo padrão do botão */
+    border: none; /* Remove a borda padrão do botão */
+    padding: 0; /* Remove o padding padrão do botão */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+    position: absolute; /* Permite o ajuste preciso da posição */
+    top: -65px; /* Move o botão mais para cima */
+    right: 2.8%; /* Ajusta a posição horizontal padrão */
+    z-index: 10; /* Garante que o botão esteja por cima de outros elementos */
+}
+
+
+
+/* Media query para telas maiores (por exemplo, desktop) */
+@media (min-width: 901px) {
+    .login-button {
+        top: -65px; /* Ajuste conforme necessário para manter a posição */
+        right: 2.8%; /* Mantém a posição horizontal */
+    }
+}
+
+/* Media query para orientação horizontal */
+@media (orientation: landscape) {
+    .login-button {
+        top: -65px; /* Ajuste conforme necessário para manter a posição */
+        right: 2.8%; /* Mantém a posição horizontal */
+    }
+}
+
+/* Media query para celular na orientação vertical */
+@media (max-width: 900px) and (orientation: portrait) {
+    .login-button {
+        top: -65px; /* Ajuste conforme necessário para manter a posição */
+        right: 3.4%; /* Move o botão um pouco mais para a direita */
+    }
+}
+
+
+/* Estilos para a div contêiner do botão */
+.logo-container {
+    position: relative; /* Permite posicionamento absoluto dentro do contêiner */
+    width: 100%; /* Ocupa toda a largura disponível */
+    height: 0.1vh; /* Ocupa a altura total da viewport */
+    
+}
+
+/* Estilos para o botão de review */
+.logo-button {        
+    background: none; /* Remove o fundo padrão do botão */
+    border: none; /* Remove a borda padrão do botão */
+    padding: 0; /* Remove o padding padrão do botão */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+    position: absolute; /* Permite o ajuste preciso da posição */
+    top: -198px; /* Move o botão mais para cima */
+    right: 4%; /* Ajusta a posição horizontal padrão */
+    z-index: 10; /* Garante que o botão esteja por cima de outros elementos */
+    cursor: default; /* Define o cursor padrão */
+}
+
+/* Estilos para a imagem dentro do botão de review */
+.logo-button img {
+    width: 25px; /* Largura da imagem */
+    height: auto; /* Mantém a proporção da imagem */
+}
+
+/* Media query para telas maiores (por exemplo, desktop) */
+@media (min-width: 901px) {
+    .logo-button {
+        top: -198px; /* Ajuste conforme necessário para manter a posição */
+        right: 4%; /* Mantém a posição horizontal */
+    }
+}
+
+/* Media query para orientação horizontal */
+@media (orientation: landscape) {
+    .logo-button {
+        top: -198px; /* Ajuste conforme necessário para manter a posição */
+        right: 4%; /* Mantém a posição horizontal */
+    }
+}
+
+/* Media query para celular na orientação vertical */
+@media (max-width: 900px) and (orientation: portrait) {
+    .logo-button {
+        top: -198px; /* Ajuste conforme necessário para manter a posição */
+        right: 5%; /* Move o botão um pouco mais para a direita */
+    }
+}
+
+
+
+/* Estilos para a div contêiner do botão */
+.button-container {
+    position: relative; /* Permite posicionamento absoluto dentro do contêiner */
+    width: 100%; /* Ocupa toda a largura disponível */
+    height: 0.1vh; /* Ocupa a altura total da viewport */
+}
+
+
+/* Estilos para o botão de review */
+.review-button {        
+    background: none; /* Remove o fundo padrão do botão */
+    border: none; /* Remove a borda padrão do botão */
+    padding: 0; /* Remove o padding padrão do botão */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+    position: absolute; /* Permite o ajuste preciso da posição */
+    top: -57px; /* Move o botão para cima (exemplo: 70 pixels acima do topo) */
+    right: 4%; /* Ajusta a posição horizontal padrão */
+    z-index: 10; /* Garante que o botão esteja por cima de outros elementos */
+    opacity: 0.5; /* Opacidade do botão */
+}
+
+/* Estilos para a imagem dentro do botão de review */
+.review-button img {
+    width: 27px; /* Largura da imagem */
+    height: auto; /* Mantém a proporção da imagem */
+
+}
+ 
+/* Media query para telas maiores (por exemplo, desktop) */
+@media (min-width: 901px) {
+    .review-button {
+        top: -57px; /* Ajuste conforme necessário para manter a posição */
+        right: 4%; /* Mantém a posição horizontal */
+    }
+}
+
+/* Media query para orientação horizontal */
+@media (orientation: landscape) {
+    .review-button {
+        top: -57px; /* Ajuste conforme necessário para manter a posição */
+        right: 4%; /* Mantém a posição horizontal */
+    }
+}
+
+/* Media query para celular na orientação vertical */
+@media (max-width: 900px) and (orientation: portrait) {
+    .review-button {
+        right: 5%; /* Move o botão um pouco mais para a direita */
+
+    }
+}
+
+/* Estilos para a div contêiner do formulário de review */
+.container-formulario {
+    display: none; /* Oculta por padrão */
+    background-color: #ffffff; /* Cor de fundo */
+    padding: 20px; /* Espaçamento interno */
+    border-radius: 25px; /* Borda arredondada */
+    box-shadow: 0 0 0px rgba(0, 0, 0, 0.0); /* Sombra */
+    width: 90%; /* Largura */
+    max-width: 600px; /* Largura máxima */
+    text-align: center; /* Alinhamento de texto */
+    margin-bottom: 0px; /* Margem inferior */
+    padding-top: 40px; /* Espaçamento superior */
+    padding-bottom: 45px; /* Espaçamento inferior */
+    margin-top: -23px; /* Margem superior */
+}
+
+.stars .star {
+    cursor: pointer;
+}
+
+.stars .star.checked {
+    color: #fbbf1c;
+}
+
+.stars .star.checked::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: var(--star-fill, 100%);
+    overflow: hidden;
+    color: black;
+}
+
+/* Resetando os estilos globais indesejados */
+.reviews-section {
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 0;
+    background-color: #2b2b2b; /* Cor de fundo do tema escuro */
+    color: #cccccc;
+    width: 100%;
+}
+
+/* Container principal que agora contém ambos estatísticas e reviews */
+.reviews-section .container-response-output {
+    background-color: #242423; /* Cor escura */
+    padding: 30px 20px;
+    border-radius: 25px;
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+    margin: 20px auto;
+    position: relative;
+    border: 1px solid rgba(204, 204, 204, 0.2);
+    padding-bottom: 20px !important;
+    padding-top: 20px !important;
+}
+
+/* Container das estatísticas dentro do container principal */
+.reviews-section .estatisticas-header {
+    padding: 15px 0 35px;
+    border-bottom: 1px solid rgba(204, 204, 204, 0.1);
+    margin-bottom: 30px;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    padding-bottom: 50px !important; /* Aumenta o padding inferior */
+    margin-bottom: 30px !important; /* Aumenta a margem inferior */
+    border-bottom: none !important;
+    margin-bottom: 20px !important;
+    padding-bottom: 30px !important;
+}
+
+/* Título do resumo */
+.reviews-section .estatisticas-header h2 {
+    font-size: 15px;
+    font-weight: normal;
+    padding-bottom: 15px;
+    color: #cccccc;
+    text-align: center; /* Mudado para centralizar */
+    margin-left: 0;
+    margin-bottom: 15px;
+}
+
+/* Container para as barras */
+.reviews-section .barras-container {
+    margin-bottom: 25px;
+    margin-bottom: 25px !important;
+    margin-bottom: 10px !important;
+}
+
+/* Container individual de cada barra com seu número */
+.reviews-section .barra-container {
+    display: flex;
+    align-items: center;
+    margin: 8px 0; /* Reduzido de 15px para 8px */
+    position: relative;
+    height: 18px; /* Reduzido de 20px para 18px */
+}
+
+/* Estilo das barras de avaliação */
+.reviews-section .barra-avaliacao {
+    width: 60%; /* Reduzido de 75% para 60% */
+    height: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    margin-right: 10px;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    margin-left: 15px !important;
+}
+
+/* Ajuste da largura das barras para diferentes tamanhos de tela */
+.reviews-section .estatisticas-header .barra-avaliacao {
+    position: absolute;
+    left: 25px;
+    width: 65%; /* Aumentado de 60% para 65% em telas grandes */
+    height: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    margin: 6px 0;
+}
+
+/* Ajustes específicos para tablets */
+@media (max-width: 768px) {
+    .reviews-section .estatisticas-header .barra-avaliacao {
+        width: 52%; /* Reduzido de 55% para 52% */
+    }
+}
+
+/* Ajustes específicos para celulares */
+@media (max-width: 480px) {
+    .reviews-section .estatisticas-header .barra-avaliacao {
+        width: 45%; /* Reduzido de 50% para 45% para evitar contato */
+        left: 25px; /* Garantir que a posição à esquerda seja mantida */
+    }
+}
+
+@media (max-width: 768px) {
+    .reviews-section .estatisticas-header .barra-avaliacao {
+        width: 55%; /* Reduzido para telas menores */
+    }
+}
+
+@media (max-width: 480px) {
+    .reviews-section .estatisticas-header .barra-avaliacao {
+        width: 50%; /* Reduzido ainda mais para telas muito pequenas */
+    }
+}
+
+/* Estilo para os números das barras */
+.reviews-section .barra-container p {
+    font-size: 12px;
+    color: #cccccc;
+    margin: 0 0 0 5px;
+    position: static !important; /* Sobrescrever position:absolute */
+    margin: 0 0 0 8px !important;
+}
+
+/* Preenchimentos das barras de avaliação */
+.reviews-section .barra-avaliacao div {
+    height: 100%;
+    background-color: #fbbf1c;
+    border-radius: 5px;
+    transition: width 0.5s;
+}
+
+/* Container do resumo de avaliação (estrelas e nota) */
+.reviews-section .rating-summary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 25px 0 15px;
+    position: relative;
+    margin-top: 30px;
+    margin-bottom: 10px !important;
+}
+
+/* Nota média */
+.reviews-section .rating-summary h3 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #cccccc;
+    margin: 0 0 5px;
+    position: static !important;
+    transform: none !important;
+    margin-bottom: 1px; /* Reduz espaço entre a nota e as estrelas */
+}
+
+/* Container da imagem de estrelas */
+.reviews-section .star-rating-container {
+    margin: 5px 0 4px 0; /* Aumenta margem superior e reduz a inferior */
+    position: relative;
+    top: 2px; /* Move ligeiramente para baixo */
+}
+
+/* Imagem das estrelas */
+.reviews-section .star-rating-container img {
+    width: 120px;
+    height: auto;
+}
+
+/* Número total de reviews */
+.reviews-section .numero-total-de-reviews {
+    font-size: 14px;
+    color: rgba(204, 204, 204, 0.7);
+    margin: 5px 0 0;
+    position: static !important;
+    transform: none !important;
+    margin-top: 1px; /* Reduz espaço entre estrelas e contagem */
+}
+
+/* Container da lista de reviews */
+.reviews-section .reviews-list {
+    max-height: 500px;
+    overflow-y: auto;
+    padding: 0 5px;
+    margin-top: 30px !important;
+    padding-top: 15px !important;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+/* Estilo individual de cada review */
+.reviews-section .review {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 25px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(204, 204, 204, 0.1);
+    position: relative;
+    text-align: left;
+}
+
+/* Mantém os estilos existentes para os elementos dentro dos reviews */
+.reviews-section .circle-border,
+.reviews-section .circle-border2,
+.reviews-section .circle {
+    /* Manter estilos existentes mas ajustar cores */
+    background-color: transparent;
+    border-color: rgba(204, 204, 204, 0.2);
+    box-shadow: 0 0 0 0.5px rgba(204, 204, 204, 0.2);
+}
+
+.reviews-section .review .stars {
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-align: left;
+    color: #fbbf1c;
+    margin-top: 40px;
+}
+
+.reviews-section .review .name-date {
+    font-size: 15px;
+    color: #cccccc;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+    margin-top: -95px;
+    margin-bottom: 20px;
+}
+
+.reviews-section .review .date {
+    font-size: 12px;
+    color: rgba(204, 204, 204, 0.5);
+    margin-top: -20px;
+    text-align: left;
+    margin-left: 50px;
+}
+
+.reviews-section .review .comment {
+    font-size: 15px;
+    margin-left: 0px;
+    text-align: left;
+    position: relative;
+    margin-top: 40px;
+    color: #cccccc;
+}
+
+/* Corrigir imagem de verificação */
+.reviews-section .verified-icon {
+    background-image: url('images/icon-verification-48.svg');
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .reviews-section .barra-avaliacao {
+        width: 70%;
+    }
+}
+
+@media (max-width: 480px) {
+    .reviews-section .barra-avaliacao {
+        width: 65%;
+    }
+    
+    .reviews-section .estatisticas-header {
+        padding: 10px 0 25px;
+    }
+}
+
+/* Restaurar a aparência original do container de estatísticas */
+.reviews-section .estatisticas-header {
+    position: relative;
+    background-color: #242423; /* Adaptado para tema escuro */
+    padding: 20px;
+    padding-bottom: 30px;
+    border-radius: 25px;
+    box-shadow: 0 0 0px rgba(0, 0, 0, 0.0);
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    margin-bottom: 25px;
+    margin-top: -5px;
+    border: 1px solid rgba(204, 204, 204, 0.2);
+}
+
+/* Restaurar posicionamento original dos números das barras */
+.reviews-section .estatisticas-header .numero-barra-5 {
+    position: absolute;
+    top: 7px;
+    left: 10px;
+    font-size: 12px;
+    font-weight: normal;
+    text-align: left;
+    color: #cccccc;
+}
+
+.reviews-section .estatisticas-header .numero-barra-4 {
+    position: absolute;
+    top: 25px;
+    left: 10px;
+    font-size: 12px;
+    font-weight: normal;
+    text-align: left;
+    color: #cccccc;
+}
+
+.reviews-section .estatisticas-header .numero-barra-3 {
+    position: absolute;
+    top: 43px;
+    left: 10px;
+    font-size: 12px;
+    font-weight: normal;
+    text-align: left;
+    color: #cccccc;
+}
+
+.reviews-section .estatisticas-header .numero-barra-2 {
+    position: absolute;
+    top: 61px;
+    left: 10px;
+    font-size: 12px;
+    font-weight: normal;
+    text-align: left;
+    color: #cccccc;
+}
+
+.reviews-section .estatisticas-header .numero-barra-1 {
+    position: absolute;
+    top: 79px;
+    left: 10px;
+    font-size: 12px;
+    font-weight: normal;
+    text-align: left;
+    color: #cccccc;
+}
+
+/* Restaurar aparência das barras de avaliação */
+.reviews-section .estatisticas-header .barra-avaliacao {
+    width: 60%; /* Reduzido de 75% para 60% */
+    background-color: rgba(255, 255, 255, 0.1);
+    margin: 10px 0;
+    border-radius: 5px;
+    margin-left: 18px;
+}
+
+/* Ajuste da largura das barras para diferentes tamanhos de tela */
+.reviews-section .estatisticas-header .barra-avaliacao {
+    position: absolute;
+    left: 25px;
+    width: 65%; /* Aumentado de 60% para 65% em telas grandes */
+    height: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    margin: 6px 0;
+}
+
+/* Ajustes específicos para tablets */
+@media (max-width: 768px) {
+    .reviews-section .estatisticas-header .barra-avaliacao {
+        width: 52%; /* Reduzido de 55% para 52% */
+    }
+}
+
+/* Ajustes específicos para celulares */
+@media (max-width: 480px) {
+    .reviews-section .estatisticas-header .barra-avaliacao {
+        width: 45%; /* Reduzido de 50% para 45% para evitar contato */
+        left: 25px; /* Garantir que a posição à esquerda seja mantida */
+    }
+}
+
+@media (max-width: 768px) {
+    .reviews-section .estatisticas-header .barra-avaliacao {
+        width: 55%; /* Reduzido para telas menores */
+    }
+}
+
+@media (max-width: 480px) {
+    .reviews-section .estatisticas-header .barra-avaliacao {
+        width: 50%; /* Reduzido ainda mais para telas muito pequenas */
+    }
+}
+
+@media (max-width: 768px) {
+    .reviews-section .estatisticas-header .barra-avaliacao {
+        width: 55%; /* Reduzido para telas menores */
+    }
+}
+
+@media (max-width: 480px) {
+    .reviews-section .estatisticas-header .barra-avaliacao {
+        width: 50%; /* Reduzido ainda mais para telas muito pequenas */
+    }
+}
+
+@media (max-width: 768px) {
+    .reviews-section .estatisticas-header .barra-avaliacao {
+        width: 55%; /* Reduzido para telas menores */
+    }
+}
+
+@media (max-width: 480px) {
+    .reviews-section .estatisticas-header .barra-avaliacao {
+        width: 50%; /* Reduzido ainda mais para telas muito pequenas */
+    }
+}
+
+@media (max-width: 768px) {
+    .reviews-section .estatisticas-header .barra-avaliacao {
+        width: 55%; /* Reduzido para telas menores */
+    }
+}
+
+@media (max-width: 480px) {
+    .reviews-section .estatisticas-header .barra-avaliacao {
+        width: 50%; /* Reduzido ainda mais para telas muito pequenas */
+    }
+}
+
+@media (max-width: 768px) {
+    .reviews-section .estatisticas-header .barra-avaliacao {
+        width: 55%; /* Reduzido para telas menores */
+    }
+}
+
+@media (max-width: 480px) {
+    .reviews-section .estatisticas-header .barra-avaliacao {
+        width: 50%; /* Reduzido ainda mais para telas muito pequenas */
+    }
+}
+
+@media (max-width: 768px) {
+    .reviews-section .estatisticas-header .barra-avaliacao {
+        width: 55%; /* Reduzido para telas menores */
+    }
+}
+
+@media (max-width: 480px) {
+    .reviews-section .estatisticas-header .barra-avaliacao {
+        width: 50%; /* Reduzido ainda mais para telas muito pequenas */
+    }
+}
+
+@media (max-width: 768px) {
+    .reviews-section .estatisticas-header .barra-avaliacao {
+        width: 55%; /* Reduzido para telas menores */
+    }
+}
+
+@media (max-width: 480px) {
+    .reviews-section .estatisticas-header .barra-avaliacao {
+        width: 50%; /* Reduzido ainda mais para telas muito pequenas */
+    }
+}
+
+@media (max-width: 768px) {
+    .reviews-section .estatisticas-header .barra-avaliacao {
+        width: 55%; /* Reduzido para telas menores */
+    }
+}
+
+@media (max-width: 480px) {
+    .reviews-section .estatisticas-header .barra-avaliacao {
+        width: 50%; /* Reduzido ainda mais para telas muito pequenas */
+    }
+}
+
+@media (max-width: 768px) {
+    .reviews-section .estatisticas-header .barra-avaliacao {
+        width: 55%; /* Reduzido para telas menores */
+    }
+}
+
+@media (max-width: 480px) {
+    .reviews-section .estatisticas-header .barra-avaliacao {
+        width: 50%; /* Reduzido ainda mais para telas muito pequenas */
+    }
+}
+
+@media (max-width: 768px) {
+    .reviews-section .estatisticas-header .barra-avaliacao {
+        width: 55%; /* Reduzido para telas menores */
+    }
+}
+
+@media (max-width: 480px) {
+    .reviews-section .estatisticas-header .barra-avaliacao {
+        width: 50%; /* Reduzido ainda mais para telas muito pequenas */
+    }
+}
+
+@media (max-width: 768px) {
+    .reviews-section .estatisticas-header .barra-avaliacao {
+        width: 55%; /* Reduzido para telas menores */
+    }
+}
+
+@media (max-width: 480px) {
+    .reviews-section .estatisticas-header .barra-avaliacao {
+        width: 50%; /* Reduzido ainda mais para telas muito pequenas */
+    }
+}
+
+@media (max-width: 768px) {
+    .reviews-section .estatisticas-header .barra-avaliacao {
+        width: 55%; /* Reduzido para telas menores */
+    }
+}
+
+@media (max-width: 480px) {
+    .reviews-section .estatisticas-header .barra-avaliacao {
+        width: 50%; /* Reduzido ainda mais para telas muito pequenas */
+    }
+}
+
+/* Média de avaliação (número) */
+.reviews-section .estatisticas-header h3 {
+    font-size: 1.0rem;
+    font-weight: bold;
+    color: #cccccc;
+    position: absolute;
+    top: 30%;
+    left: 88%;
+    transform: translateX(-50%);
+}
+
+/* Container das estrelas do resumo */
+.reviews-section .estatisticas-header .star-rating-container {
+    position: absolute;
+    top: 54%;
+    left: 88%;
+    transform: translateX(-50%);
+}
+
+/* Imagem das estrelas do resumo */
+.reviews-section .estatisticas-header .star-rating-container img {
+    width: 120px;
+    height: auto;
+}
+
+/* Total de reviews */
+.reviews-section .estatisticas-header .numero-total-de-reviews {
+    position: absolute;
+    font-size: 0.8rem;
+    font-weight: normal;
+    color: rgba(204, 204, 204, 0.7);
+    text-align: center;
+    top: 63%;
+    left: 88%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+    .reviews-section .estatisticas-header .barra-avaliacao {
+        width: 74%;
+    }
+    
+    .reviews-section .estatisticas-header .star-rating-container,
+    .reviews-section .estatisticas-header h3,
+    .reviews-section .estatisticas-header .numero-total-de-reviews {
+        left: 88%;
+    }
+}
+
+@media (max-width: 480px) {
+    .reviews-section .estatisticas-header .barra-avaliacao {
+        width: 63%;
+    }
+    
+    .reviews-section .estatisticas-header .star-rating-container,
+    .reviews-section .estatisticas-header h3,
+    .reviews-section .estatisticas-header .numero-total-de-reviews {
+        left: 83%;
+    }
+    
+    .reviews-section .estatisticas-header {
+        padding: 15px;
+        padding-bottom: 25px;
+    }
+}
+
+/* Preservar barras de avaliação com a aparência original */
+.reviews-section .estatisticas-header .barras-container {
+    margin-bottom: 0;
+    position: relative;
+    height: 95px; /* Reduzido de 120px para 95px */
+}
+
+/* Anular estilos de barra-container que estavam alterando o layout original */
+.reviews-section .estatisticas-header .barra-container {
+    display: block;
+    position: relative;
+    margin: 8px 0; /* Reduzido de 15px para 8px */
+    height: 18px; /* Reduzido de 20px para 18px */
+}
+
+/* Título do resumo */
+.reviews-section .estatisticas-header h2 {
+    font-size: 15px;
+    font-weight: normal;
+    padding-bottom: 10px;
+    color: #cccccc;
+    text-align: center; /* Mudado para centralizar */
+    margin-left: 0;
+    margin-bottom: 15px;
+}
+
+/* Ajustar a largura das barras preenchidas */
+.reviews-section .barra-avaliacao div {
+    height: 5px;
+    border-radius: 5px;
+    transition: width 0.5s;
+    margin-bottom: 10px;
+}
+
+/* Corrigir as cores das barras */
+.reviews-section .cinco-estrelas,
+.reviews-section .quatro-estrelas,
+.reviews-section .tres-estrelas,
+.reviews-section .duas-estrelas,
+.reviews-section .uma-estrela {
+    background-color: #fbbf1c;
+}
+
+/* Estrutura dos reviews */
+.reviews-section .reviews-list {
+    margin-top: 15px;
+}
+
+/* IMPORTANTE: Redefinir todos os estilos da estatisticas-header para garantir compatibilidade */
+.reviews-section .estatisticas-header {
+    all: unset;
+    display: block;
+    position: relative;
+    background-color: #242423;
+    padding: 20px;
+    border-radius: 15px;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 25px;
+    box-sizing: border-box;
+}
+
+/* Título do resumo */
+.reviews-section .estatisticas-header h2 {
+    font-size: 15px;
+    font-weight: normal;
+    padding-bottom: 10px;
+    color: #cccccc;
+    font-family: 'Open Sans', sans-serif;
+    margin: 0 0 15px 0;
+}
+
+/* Container das barras */
+.reviews-section .estatisticas-header .barras-container {
+    position: relative;
+    width: 100%;
+    height: 95px; /* Reduzido de 120px para 95px */
+    display: block;
+}
+
+/* Estilo dos números nas barras */
+.reviews-section .estatisticas-header .numero-barra-5,
+.reviews-section .estatisticas-header .numero-barra-4, 
+.reviews-section .estatisticas-header .numero-barra-3,
+.reviews-section .estatisticas-header .numero-barra-2,
+.reviews-section .estatisticas-header .numero-barra-1 {
+    position: absolute;
+    left: 10px;
+    font-size: 12px;
+    font-weight: normal;
+    text-align: left;
+    color: #cccccc;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.reviews-section .estatisticas-header .numero-barra-5 { top: 7px; }
+.reviews-section .estatisticas-header .numero-barra-4 { top: 25px; } /* Ajustado para o novo espaçamento */
+.reviews-section .estatisticas-header .numero-barra-3 { top: 43px; } /* Ajustado para o novo espaçamento */
+.reviews-section .estatisticas-header .numero-barra-2 { top: 61px; } /* Ajustado para o novo espaçamento */
+.reviews-section .estatisticas-header .numero-barra-1 { top: 79px; } /* Ajustado para o novo espaçamento */
+
+/* Container individual de cada barra */
+.reviews-section .estatisticas-header .barra-container {
+    position: relative;
+    margin: 8px 0; /* Reduzido de 15px para 8px */
+    height: 18px; /* Reduzido de 20px para 18px */
+    display: block;
+}
+
+/* Estilo das barras de avaliação */
+.reviews-section .estatisticas-header .barra-avaliacao {
+    position: absolute;
+    left: 25px;
+    width: 60%; /* Reduzido de 75% para 60% */
+    height: 5px;
+    background-color: rgba(224, 224, 224, 0.2);
+    border-radius: 5px;
+}
+
+/* Preenchimento das barras */
+.reviews-section .estatisticas-header .barra-avaliacao div {
+    height: 100%;
+    background-color: #fbbf1c;
+    border-radius: 5px;
+}
+
+/* Posicionamento do resumo à direita */
+.reviews-section .estatisticas-header .rating-summary {
+    position: absolute;
+    top: 45px; /* Aumentado de 20px para 40px para descer o container inteiro */
+    right: 10px;
+    text-align: center;
+    width: 140px;
+}
+
+/* Estilo da nota média */
+.reviews-section .estatisticas-header .rating-summary h3 {
+    font-size: 1.0rem;
+    font-weight: bold;
+    color: #cccccc;
+    margin: 0 0 5px 0;
+    margin-bottom: 1px; /* Reduz espaço entre a nota e as estrelas */
+}
+
+/* Container das estrelas */
+.reviews-section .estatisticas-header .rating-summary .star-rating-container {
+    margin: 8px 0;
+    margin: 5px 0 4px 0; /* Aumenta margem superior e reduz a inferior */
+    position: relative;
+    top: 2px; /* Move ligeiramente para baixo */
+}
+
+/* Imagem das estrelas */
+.reviews-section .estatisticas-header .rating-summary .star-rating-container img {
+    width: 120px;
+    height: auto;
+}
+
+/* Estilo do total de reviews */
+.reviews-section .estatisticas-header .rating-summary .numero-total-de-reviews {
+    font-size: 0.8rem;
+    font-weight: normal;
+    color: rgba(204, 204, 204, 0.7);
+    margin: 5px 0 0 0;
+    white-space: nowrap;
+    margin-top: 1px; /* Reduz espaço entre estrelas e contagem */
+}
+
+/* Container principal de reviews */
+.reviews-section .container-response-output {
+    background-color: #242423;
+    padding: 0;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+    margin: 20px auto;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Lista de reviews */
+.reviews-section .reviews-list {
+    margin-top: 10px;
+    padding: 0 10px 20px 10px;
+}
+
+/* Container principal - tema escuro */
+.reviews-section {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #2b2b2b;
+    color: #cccccc;
+    padding: 40px 0;
+    width: 100%;
+}
+
+/* Container de reviews e estatísticas */
+.reviews-section .container-response-output {
+    background-color: #242423;
+    padding: 20px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 600px;
+    margin: 20px auto;
+    border: 1px solid rgba(204, 204, 204, 0.2);
+    position: relative;
+}
+
+/* Cabeçalho com estatísticas */
+.reviews-section .estatisticas-header {
+    position: relative;
+    padding: 15px 0 60px; /* Aumentado padding inferior */
+    margin-bottom: 40px;
+    border-bottom: 1px solid rgba(204, 204, 204, 0.1);
+    border-bottom: none !important;
+    margin-bottom: 20px !important;
+    padding-bottom: 30px !important;
+}
+
+/* Título do resumo */
+.reviews-section .estatisticas-header h2 {
+    font-size: 15px;
+    font-weight: normal;
+    color: #cccccc;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Container das barras */
+.reviews-section .barras-container {
+    position: relative;
+    height: 105px; /* Aumentado de 95px para 105px */
+    margin-bottom: 20px;
+    margin-bottom: 10px !important;
+}
+
+/* Números nas barras */
+.reviews-section .estatisticas-header .numero-barra-5,
+.reviews-section .estatisticas-header .numero-barra-4,
+.reviews-section .estatisticas-header .numero-barra-3,
+.reviews-section .estatisticas-header .numero-barra-2,
+.reviews-section .estatisticas-header .numero-barra-1 {
+    position: absolute;
+    left: 10px;
+    font-size: 12px;
+    color: #cccccc;
+}
+
+/* Posicionar os números verticalmente */
+.reviews-section .estatisticas-header .numero-barra-5 { top: 7px; }
+.reviews-section .estatisticas-header .numero-barra-4 { top: 25px; }
+.reviews-section .estatisticas-header .numero-barra-3 { top: 43px; }
+.reviews-section .estatisticas-header .numero-barra-2 { top: 61px; }
+.reviews-section .estatisticas-header .numero-barra-1 { top: 79px; }
+
+/* Barras de avaliação */
+.reviews-section .estatisticas-header .barra-container {
+    position: relative;
+    height: 18px;
+    margin: 8px 0;
+}
+
+.reviews-section .estatisticas-header .barra-avaliacao {
+    position: absolute;
+    left: 25px;
+    width: 60%;
+    height: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+}
+
+/* Preenchimento colorido das barras */
+.reviews-section .barra-avaliacao div {
+    height: 100%;
+    background-color: #fbbf1c;
+    border-radius: 5px;
+}
+
+/* Resumo com nota e estrelas */
+.reviews-section .rating-summary {
+    position: absolute;
+    top: 40px; /* Aumentado de 20px para 40px para descer o container inteiro */
+    right: 10px;
+    text-align: center;
+    width: 140px;
+}
+
+/* Nota média */
+.reviews-section .rating-summary h3 {
+    font-size: 1.0rem;
+    font-weight: bold;
+    color: #cccccc;
+    margin-bottom: 5px;
+    margin-bottom: 1px; /* Reduz espaço entre a nota e as estrelas */
+}
+
+/* Estrelas */
+.reviews-section .rating-summary .star-rating-container {
+    margin: 8px 0;
+    margin: 5px 0 4px 0; /* Aumenta margem superior e reduz a inferior */
+    position: relative;
+    top: 2px; /* Move ligeiramente para baixo */
+}
+
+.reviews-section .star-rating-container img {
+    width: 120px;
+    height: auto;
+}
+
+/* Contador de reviews */
+.reviews-section .rating-summary .numero-total-de-reviews {
+    font-size: 0.8rem;
+    color: rgba(204, 204, 204, 0.7);
+    margin-top: 5px;
+    white-space: nowrap;
+    margin-top: 1px; /* Reduz espaço entre estrelas e contagem */
+}
+
+/* Lista de avaliações */
+.reviews-section .reviews-list {
+    margin-top: 30px;
+    padding: 0 10px 20px;
+    max-height: 500px;
+    overflow-y: auto;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+/* Avaliação individual */
+.reviews-section .review {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 25px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(204, 204, 204, 0.1);
+    text-align: left;
+    position: relative;
+}
+
+/* Avatar do reviewer */
+.reviews-section .circle-border,
+.reviews-section .circle-border2,
+.reviews-section .circle {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    position: absolute;
+    top: 12px;
+    left: 18px;
+    background-color: transparent;
+}
+
+.reviews-section .circle {
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+.reviews-section .circle-border {
+    z-index: 2;
+    border: 2px solid rgba(204, 204, 204, 0.1);
+    box-shadow: 0 0 0 0.5px rgba(204, 204, 204, 0.1);
+}
+
+.reviews-section .circle-border2 {
+    z-index: 2;
+    box-shadow: 0 0 0 0.5px rgba(204, 204, 204, 0.1) inset;
+}
+
+/* Estrelas do review */
+.reviews-section .review .stars {
+    font-size: 20px;
+    color: #fbbf1c;
+    text-align: left;
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+
+/* Nome e data */
+.reviews-section .review .name-date {
+    font-size: 15px;
+    color: #cccccc;
+    font-weight: bold;
+    margin-left: 50px;
+    margin-top: -95px;
+    display: flex;
+    align-items: center;
+}
+
+/* Ícone de verificado */
+.reviews-section .verified-icon {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    margin-left: 10px;
+    background-image: url('images/icon-verification-48.svg');
+    background-size: cover;
+    display: inline-flex;
+}
+
+/* Data do review */
+.reviews-section .review .date {
+    font-size: 12px;
+    color: rgba(204, 204, 204, 0.5);
+    margin-top: -20px;
+    margin-left: 50px;
+    text-align: left;
+}
+
+/* Comentário */
+.reviews-section .review .comment {
+    font-size: 15px;
+    margin-top: 40px;
+    color: #cccccc;
+    text-align: left;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .reviews-section .estatisticas-header .barra-avaliacao {
+        width: 55%;
+    }
+    .reviews-section .rating-summary {
+        right: 5px;
+        top: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .reviews-section .estatisticas-header .barra-avaliacao {
+        width: 50%;
+    }
+    .reviews-section .rating-summary {
+        width: 120px;
+        top: 40px;
+    }
+}
+
+/* Diminuir o espaçamento entre barras e posicionar os elementos no estilo original */
+.reviews-section .estatisticas-header {
+    position: relative;
+    background-color: #242423;
+    padding: 20px;
+    padding-bottom: 25px;
+    border-radius: 15px;
+    border: 1px solid rgba(204, 204, 204, 0.0);
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    margin-bottom: 20px;
+    border-bottom: none !important;
+    box-sizing: border-box;
+}
+
+/* Título do resumo */
+.reviews-section .estatisticas-header h2 {
+    font-size: 15px;
+    font-weight: normal;
+    padding-bottom: 10px;
+    color: #cccccc;
+    text-align: center;
+    margin-bottom: 10px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Diminuir a altura do container de barras */
+.reviews-section .estatisticas-header .barras-container {
+    position: relative;
+    height: 85px; /* Aumentado de 75px para 85px para acomodar o espaçamento */
+    margin-bottom: 5px;
+}
+
+/* Diminuir espaçamento entre barras */
+.reviews-section .estatisticas-header .barra-container {
+    position: relative;
+    height: 15px; /* Reduzido de 18px para 15px */
+    margin: 3px 0; /* Adicionado 3px de margem vertical */
+}
+
+/* Ajustar posição vertical dos números - reduzir espaçamento */
+.reviews-section .estatisticas-header .numero-barra-5 { top: 5px; }
+.reviews-section .estatisticas-header .numero-barra-4 { top: 23px; } /* +3px */
+.reviews-section .estatisticas-header .numero-barra-3 { top: 41px; } /* +6px */
+.reviews-section .estatisticas-header .numero-barra-2 { top: 59px; } /* +9px */
+.reviews-section .estatisticas-header .numero-barra-1 { top: 77px; } /* +12px */
+
+/* Formatar barras */
+.reviews-section .estatisticas-header .barra-avaliacao {
+    position: absolute;
+    left: 25px;
+    width: 60%;
+    height: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    margin: 6px 0; /* Aumentado de 5px para 6px */
+}
+
+/* Posicionar a área de resumo mais próxima às barras */
+.reviews-section .estatisticas-header .rating-summary {
+    position: absolute;
+    top: 35px; /* Aumentado de 20px para 35px para alinhar com as barras */
+    right: 10px;
+    text-align: center;
+    width: 140px;
+}
+
+/* Posicionar estrelas, nota e contagem com menos espaço entre eles */
+.reviews-section .estatisticas-header .rating-summary h3 {
+    font-size: 1.0rem;
+    font-weight: bold;
+    color: #cccccc;
+    margin: 0;
+    margin-bottom: 1px; /* Reduz espaço entre a nota e as estrelas */
+}
+
+.reviews-section .estatisticas-header .rating-summary .star-rating-container {
+    margin: 2px 0; /* Reduzido para deixar mais compacto */
+    margin: 5px 0 4px 0; /* Aumenta margem superior e reduz a inferior */
+    position: relative;
+    top: 2px; /* Move ligeiramente para baixo */
+}
+
+.reviews-section .estatisticas-header .rating-summary .numero-total-de-reviews {
+    font-size: 0.8rem;
+    font-weight: normal;
+    color: rgba(204, 204, 204, 0.7);
+    margin: 2px 0 0 0; /* Reduzido para deixar mais compacto */
+    margin-top: 1px; /* Reduz espaço entre estrelas e contagem */
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+    .reviews-section .estatisticas-header .rating-summary {
+        top: 35px;
+        right: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .reviews-section .estatisticas-header .rating-summary {
+        top: 35px;
+        width: 120px;
+    }
+}
+
+/* Restaurar a posição horizontal original das estrelas e manter apenas o ajuste vertical */
+.reviews-section .estatisticas-header .rating-summary {
+    position: absolute;
+    top: 40px; /* Ajustado para alinhar com as barras */
+    right: 10px;
+    text-align: center;
+    width: 140px;
+}
+
+/* Manter apenas o ajuste vertical das estrelas */
+.reviews-section .estatisticas-header .rating-summary .star-rating-container {
+    margin: 5px 0 4px 0; /* Aumenta margem superior e reduz a inferior */
+    position: relative;
+    top: 2px; /* Move ligeiramente para baixo */
+}
+
+/* Ajustes finos para o espaçamento entre elementos */
+.reviews-section .estatisticas-header .rating-summary h3 {
+    margin-bottom: 1px; /* Reduz espaço entre a nota e as estrelas */
+}
+
+.reviews-section .estatisticas-header .rating-summary .numero-total-de-reviews {
+    margin-top: 1px; /* Reduz espaço entre estrelas e contagem */
+}
+
+/* Manter ajustes responsivos para dispositivos móveis */
+@media (max-width: 768px) {
+    .reviews-section .estatisticas-header .rating-summary {
+        right: 5px; /* Preserva a posição original */
+    }
+}
+
+@media (max-width: 480px) {
+    .reviews-section .estatisticas-header .rating-summary {
+        right: 5px;
+        width: 120px; /* Preserva a largura para telas pequenas */
+    }
+}
+
+/* Correção do posicionamento das estrelas - manter alinhamento horizontal original */
+.reviews-section .estatisticas-header .rating-summary .star-rating-container {
+    /* Remover propriedades que afetam a posição horizontal */
+    margin-left: 0;
+    margin-right: 0;
+    transform: none; /* Remove qualquer transformação que possa afetar o posicionamento */
+    left: auto; /* Remove o posicionamento à esquerda */
+    /* Manter apenas o ajuste vertical */
+    margin-top: 5px;
+    margin-bottom: 4px;
+    position: relative;
+    top: 2px; /* Move ligeiramente para baixo */
+}
+
+/* Garantir que o container pai mantém o alinhamento correto */
+.reviews-section .estatisticas-header .rating-summary {
+    position: absolute;
+    top: 40px; /* Manter posição vertical */
+    right: 10px; /* Manter posição à direita */
+    text-align: center; /* Centralizar conteúdo */
+    transform: none; /* Remover qualquer transformação */
+    width: 140px; /* Manter largura original */
+}
+
+/* Ajustes específicos para telas menores */
+@media (max-width: 768px) {
+    .reviews-section .estatisticas-header .rating-summary {
+        right: 5px;
+        transform: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .reviews-section .estatisticas-header .rating-summary {
+        right: 5px;
+        width: 120px;
+        transform: none;
+    }
+}
+
+/* Correção definitiva da largura das barras - colocar no final do arquivo */
+.reviews-section .estatisticas-header .barra-avaliacao {
+    position: absolute !important;
+    left: 25px !important;
+    height: 5px !important;
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    border-radius: 5px !important;
+    /* Largura padrão para telas grandes */
+    width: 69% !important; 
+    margin: 6px 0 !important;
+}
+
+/* Ajuste específico para tablets */
+@media (max-width: 768px) {
+    .reviews-section .estatisticas-header .barra-avaliacao {
+        width: 62% !important; /* Reduzido para telas médias */
+    }
+}
+
+/* Ajuste específico para celulares */
+@media (max-width: 480px) {
+    .reviews-section .estatisticas-header .barra-avaliacao {
+        width: 47% !important; /* Reduzido ainda mais para telas pequenas */
+    }
+}
+
+/* Ajustar o posicionamento do resumo à direita para ficar alinhado com as barras */
+.reviews-section .estatisticas-header .rating-summary {
+    position: absolute !important;
+    top: 35px !important; 
+    right: 10px !important;
+    text-align: center !important;
+    width: 140px !important;
+    transform: none !important;
+}
+
+/* Ajustar apenas o posicionamento vertical das estrelas */
+.reviews-section .estatisticas-header .rating-summary .star-rating-container {
+    margin: 5px 0 4px 0 !important;
+    position: relative !important;
+    top: 2px !important;
+    transform: none !important;
+}

@@ -1,0 +1,29 @@
+{
+  "name": "parallel_text_reader",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "serve:80": "http-server ./public -p 80",
+    "serve:8080": "http-server ./public -p 8080",
+    "serve:8888": "http-server ./public -p 8888",
+    "serve:all": "concurrently \"npm run serve:80\" \"npm run serve:8080\" \"npm run serve:8888\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "type": "module",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "firebase": "^10.8.1",
+    "firebase-admin": "^11.11.1",
+    "http-proxy-middleware": "^3.0.3"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "http-server": "^14.1.1"
+  }
+}

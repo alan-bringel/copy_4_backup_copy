@@ -1,0 +1,817 @@
+/* Corpo da página */
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #242423; /* Fundo externo */
+    color: #eeeeee; /* Texto claro */
+}
+
+header {
+    background-color: #1e1f1f; /* Fundo do cabeçalho */
+    padding: 10px;
+    text-align: center;
+    color: white;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 200; /* Peso intermediário para maior elegância */
+}
+
+/* Layout principal */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 20px; /* Padding original */
+    opacity: 0;
+    animation: fadeIn 0.3s ease-in forwards;
+    animation-delay: 0.1s;
+}
+
+#text-container {
+    display: flex;
+    justify-content: space-between; /* Espaçamento entre os contêineres */
+    gap: 20px; /* Espaço entre os contêineres */
+    width: 85%; /* Ajustar a largura dos contêineres de texto */
+    max-width: 1100px; /* Ajustar a largura máxima */
+    margin-top: 60px; /* Aumentar o espaçamento superior para empurrar os textos para baixo */
+    margin-bottom: 20px; /* Espaçamento inferior original */
+    transition: all 0.2s ease; /* Alterado de 0.1s para 0.2s */
+}
+
+#text-container.fade-out {
+    opacity: 0 !important;
+    transition: opacity 0.2s ease-out !important; /* Alterado de 0.1s para 0.2s */
+}
+
+#text-container.fade-in {
+    opacity: 1 !important;
+    transition: opacity 0.2s ease-in !important; /* Alterado de 0.1s para 0.2s */
+}
+
+/* Contêiner de Texto */
+.text-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: 0.1px solid rgba(204, 204, 204, 0.0);
+    border-radius: 17px;
+    padding: 15px;
+    background-color: transparent;
+    min-height: auto; /* Remove altura mínima */
+    margin: 0; /* Remove margens extras */
+    box-sizing: border-box; /* Garante que o padding não cause overflow */
+    transition: opacity 0.2s ease-out !important; /* Alterado de 0.1s para 0.2s */
+    opacity: 1;
+}
+
+.text-column.fade-out {
+    opacity: 0 !important;
+    transition: opacity 0.2s ease-out !important; /* Alterado de 0.1s para 0.2s */
+}
+
+.text-column.fade-in {
+    opacity: 1 !important;
+    transition: opacity 0.2s ease-in !important; /* Alterado de 0.1s para 0.2s */
+}
+
+.text-content {
+    margin: 0; /* Remove margens que podem causar espaço extra */
+    padding: 0; /* Remove preenchimento que pode causar espaço extra */
+    text-align: justify;
+    font-size: 18px;
+    line-height: 1.5;
+    color: #b2b8b2;
+    overflow-y: visible !important; /* Permite que o conteúdo seja exibido por completo */
+    max-height: none !important;     /* Remove limitação de altura do container */
+    width: 100%;
+}
+
+/* Contêiner de Botões */
+#button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; /* Espaçamento superior original */
+}
+
+/* Botões de Play */
+.play-button {
+    width: 45px; /* Largura padrão do botão */
+    height: 45px; /* Altura padrão do botão */
+    border-radius: 50%;
+    border: 1px solid rgba(204, 204, 204, 0.2); /* Aumentar opacidade das bordas */
+    background-color: transparent;
+    color: #ccc;
+    font-size: 16px; /* Tamanho da fonte padrão */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Aumentado de 0.2s para 0.3s e usando 'ease' */
+    margin: 0 10px; /* Espaçamento entre os botões */
+}
+
+.play-button:hover {
+    border-color: #282929;
+    color: #eee;
+    transform: scale(1.1);
+}
+
+/* Atualização dos estilos do botão de play */
+.play-button::before {
+    content: '▶';
+    color: #cf6270;
+    font-size: 16px;
+    transition: none;
+}
+
+/* Remova a lógica que transforma o ícone em quadrado */
+.play-button.playing::before {
+    content: '▶'; /* Mantenha o ícone de play */
+    color: #cf6270;
+    font-size: 16px;
+}
+
+/* Adicionar estas novas regras */
+.play-button:active,
+.play-button.active,
+#play-alternate:active,
+#play-alternate.active {
+    border-color: transparent !important;
+    border: 1px solid rgba(204, 204, 204, 0) !important; /* Mantém a borda mas com opacidade 0 */
+    outline: none !important;
+    transition: all 0.3s ease !important; /* Mesma transição suave */
+}
+
+/* Botão de Alternar */
+#play-alternate {
+    width: 45px; /* Garantir que o botão tenha o mesmo tamanho que os outros */
+    height: 45px; /* Garantir que o botão tenha o mesmo tamanho que os outros */
+}
+
+#play-alternate::before {
+    content: '' !important; /* Remove o ícone branco */
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: #5582ec;
+    position: relative;
+    top: -4px;
+}
+
+#play-alternate::after {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: #d86572;
+    position: relative;
+    top: 4px;
+}
+
+/* Destaque da palavra */
+.highlight {
+    color: #178fd4; /* Amarelo queimado */
+    transition: color 0.3s ease;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    #text-container {
+        flex-direction: column; /* Empilhar em telas menores */
+        width: 95%; /* Aumentar a largura para 90% em telas menores */
+        align-items: stretch; /* Garante que os contêineres ocupem toda a largura */
+    }
+
+    .text-column {
+        margin-bottom: 20px; /* Espaçamento inferior para contêineres empilhados */
+    }
+
+    .play-button,
+    #play-alternate,
+    #toggle-display { /* Adicionar #toggle-display aqui */
+        width: 55px; /* Aumentar largura do botão em telas menores */
+        height: 55px; /* Aumentar altura do botão em telas menores */
+        font-size: 18px; /* Aumentar tamanho da fonte em telas menores */
+    }
+
+    /* Remove o efeito de clique nos botões em telas de celular */
+    .play-button:active,
+    #play-alternate:active {
+        outline: none;
+        transform: none !important;
+        border-color: rgba(204, 204, 204, 0.2) !important; /* Restaura a cor padrão da borda */
+    }
+
+    .play-button:active,
+    #play-alternate:active,
+    .play-button:focus,
+    #play-alternate:focus {
+        transform: none !important;  /* Remove o efeito de crescimento */
+        border-color: rgba(204, 204, 204, 0.2) !important; /* Mantém a cor padrão */
+        transition: none !important; /* Retorno imediato sem transição */
+    }
+
+    .play-button:active,
+    .play-button.active,
+    #play-alternate:active,
+    #play-alternate.active {
+        border-color: transparent !important;
+        border: 1px solid rgba(204, 204, 204, 0) !important;
+        outline: none !important;
+        transition: all 0.3s ease !important;
+    }
+
+    /* Ajustar o tamanho das linhas dentro do botão toggle-display */
+    #toggle-display span {
+        width: 24px; /* Aumentar proporcionalmente */
+    }
+}
+
+@media (max-width: 480px) and (orientation: landscape) {
+    #text-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; /* Centralizar os textos horizontalmente */
+        align-items: center; /* Centralizar os textos verticalmente */
+        width: 100%; /* Ajustar largura para evitar tocar nas bordas */
+        padding: 10px; /* Espaço interno */
+        box-sizing: border-box; /* Garantir que o padding não cause overflow */
+        margin: 0 auto; /* Centralizar o contêiner */
+    }
+
+    .text-column {
+        margin-bottom: 20px; /* Espaçamento entre os contêineres */
+        width: 100%; /* Ocupa toda a largura */
+    }
+
+    .text-content {
+        max-height: 300px; /* Ajustar altura do texto */
+    }
+
+    #button-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; /* Centralizar os botões horizontalmente */
+        align-items: center; /* Centralizar os botões verticalmente */
+        margin-top: 20px; /* Espaçamento acima */
+    }
+
+    .play-button,
+    #play-alternate,
+    #toggle-display { /* Adicionar #toggle-display aqui */
+        width: 55px; /* Mesmo tamanho dos outros botões em telas pequenas */
+        height: 55px; /* Mesmo tamanho dos outros botões em telas pequenas */
+        font-size: 18px;
+    }
+
+    .play-button {
+        margin: 0 10px; /* Espaçamento lateral entre botões */
+    }
+}
+
+/* Ajuste para telas menores na horizontal */
+@media (max-width: 768px) and (orientation: landscape) {
+    #text-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; /* Centralizar os textos horizontalmente */
+        align-items: center; /* Centralizar os textos verticalmente */
+        width: 100%; /* Ajustar largura para evitar tocar nas bordas */
+        padding: 10px; /* Espaço interno */
+        box-sizing: border-box; /* Garantir que o padding não cause overflow */
+        margin: 0 auto; /* Centralizar o contêiner */
+    }
+
+    .text-column {
+        margin-bottom: 20px; /* Espaçamento entre os contêineres */
+        width: 100%; /* Ocupa toda a largura */
+    }
+
+    .text-content {
+        max-height: 300px; /* Ajustar altura do texto */
+    }
+
+    #button-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; /* Centralizar os botões horizontalmente */
+        align-items: center; /* Centralizar os botões verticalmente */
+        margin-top: 20px; /* Espaçamento acima */
+    }
+
+    .play-button {
+        margin: 0 10px; /* Espaçamento lateral entre botões */
+    }
+}
+
+/* Responsividade para telas menores na horizontal */
+@media (max-width: 480px) and (orientation: landscape) {
+    .play-button,
+    #play-alternate,
+    #toggle-display { /* Adicionar #toggle-display aqui */
+        width: 55px; /* Mesmo tamanho dos outros botões em telas pequenas */
+        height: 55px; /* Mesmo tamanho dos outros botões em telas pequenas */
+        font-size: 18px;
+    }
+}
+
+/* Estilo para o contêiner dos botões */
+.button-container-fixed {
+    background-color: #242423; /*#282929; /* Cor de fundo preta */
+    border-radius: 50px; /* Cantos arredondados */
+    padding: 5px; /* Reduzido de 10px para 5px */
+    display: flex; /* Usar flexbox para alinhar os botões */
+    justify-content: center; /* Centralizar os botões */
+    position: relative; /* Modificado de fixed para relative */
+    bottom: auto; /* Remove o posicionamento bottom */
+    left: auto; /* Remove o posicionamento left */
+    transform: none; /* Remove a transformação */
+    z-index: 1000; /* Garantir que fique acima de outros elementos */
+    margin: 0; /* Remove margens */
+    height: auto; /* Altura automática */
+    min-height: 55px; /* Adicionado para garantir altura suficiente */
+}
+
+/* Estilos específicos para Safari */
+@media not all and (min-resolution: 0.001dpcm) {
+    @supports (-webkit-appearance: none) {
+        .text-column {
+            margin-bottom: 0; /* Remove margens inferiores que podem causar espaço extra */
+            padding-bottom: 0; /* Remove preenchimento inferior que pode causar espaço extra */
+        }
+    }
+}
+
+* {
+    box-sizing: border-box; /* Garante que o padding e a borda sejam incluídos nas dimensões */
+}
+
+#navigation-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* Espaçamento acima dos botões de navegação */
+}
+
+#navigation-buttons button {
+    width: 45px; /* Largura padrão do botão */
+    height: 45px; /* Altura padrão do botão */
+    border-radius: 50%;
+    border: 1px solid rgba(204, 204, 204, 0.2);
+    background-color: transparent;
+    color: #ccc;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 0 10px; /* Espaçamento entre os botões */
+}
+
+#navigation-buttons button:hover {
+    border-color: #eee;
+    color: #eee;
+    transform: scale(1.1);
+}
+
+@media (min-width: 769px) {
+    #text-container {
+        width: 95%; /* Ajusta a largura geral */
+        
+        display: flex; /* Garante que flexbox seja aplicado */
+        justify-content: center; /* Centraliza os itens filhos horizontalmente */
+        align-items: center; /* Centraliza os itens filhos verticalmente (se necessário) */
+      
+        box-sizing: border-box; /* Evita overflow devido ao padding */
+    }
+
+    .text-column {
+        flex: 1;
+        max-width: 60%; /* Ajusta a largura máxima de cada container */
+    }
+}
+
+/* Bloco único para dispositivos móveis */
+@media (max-width: 480px) {
+    #text-container .text-column {
+        display: flex !important;
+    }
+}
+
+/* Inicialmente, em telas pequenas, exibe apenas o container de inglês e o de português do modo normal */
+@media (max-width: 480px) {
+    /* Para o modo normal, apenas o container normal-portuguese é exibido */
+    #text-container.normal .normal-portuguese {
+        display: none;
+    }
+    /* No modo verso por verso, o container normal é oculto e o container independente é exibido */
+    #text-container.verse-by-verse .normal-portuguese {
+        display: none;
+    }
+    #text-container.verse-by-verse .verse-portuguese {
+        display: flex !important;
+    }
+    /* Garante que o inglês continue visível em ambos os modos */
+    #text-container .text-column:not(.normal-portuguese):not(.verse-portuguese) {
+        display: flex !important;
+    }
+}
+
+/* No modo normal, oculta o container de texto em português */
+@media (max-width: 480px) {
+    #text-container.normal .normal-portuguese {
+        display: none !important;
+    }
+    /* No modo verso por verso, garante que ambos os containers sejam exibidos */
+    #text-container.verse-by-verse .text-column {
+        display: flex !important;
+    }
+}
+
+/* Forçar layout vertical em telas de celular */
+@media (max-width: 480px) {
+    #text-container {
+        flex-direction: column !important;
+    }
+}
+
+/* Ajuste para telas grandes */
+@media (min-width: 1024px) {
+    #text-container {
+        margin: 60px auto 20px; /* Centraliza o contêiner */
+        justify-content: center;
+    }
+    .text-column {
+        max-width: 50%; /* Cada container ocupa metade do espaço disponível */
+    }
+}
+
+/* Ajustes para telas grandes */
+@media (min-width: 1024px) {
+    .text-content {
+        overflow-y: auto !important;
+        max-height: 400px !important;
+    }
+    .play-button {
+        border: 1px solid rgba(204, 204, 204, 0.2) !important;
+    }
+    #navigation-buttons button {
+        border: 1px solid rgba(204, 204, 204, 0.2) !important;
+    }
+}
+
+/* Ajustes para o modo "verse-by-verse" em computadores */
+@media (min-width: 1024px) {
+    #text-container.verse-by-verse .text-column {
+        max-width: 55%; /* Aumenta um pouco a largura */
+    }
+}
+
+/* Ajustes para o modo "verse-by-verse" em tablets */
+@media (min-width: 769px) and (max-width: 1023px) {
+    #text-container.verse-by-verse .text-column {
+        max-width: 55%; /* Largura proporcional para tablets */
+    }
+}
+
+/* Sobrescreve o ícone de play no botão de toggle para exibir somente o traço colorido */
+#toggle-display::before {
+    content: none !important;
+}
+
+@media (min-width: 768px) {
+    button.active {
+        border-color: #282929 !important;
+    }
+}
+
+button.active {
+    border-color: transparent !important;
+    border: 1px solid rgba(204, 204, 204, 0) !important;
+    outline: none !important;
+    transition: all 0.3s ease !important;
+}
+
+/* Estilos para as frases de tradução */
+#translation-toggle, #hide-translation {
+    display: none; /* Remover estilos */
+}
+
+#translation-toggle {
+    display: none; /* Inicialmente escondido */
+    font-size: 14px;
+    color: rgba(238, 238, 238, 0.3) !important; /* Aumenta a opacidade do texto e garante aplicação */
+    cursor: pointer;
+    text-align: center;
+    margin: 10px 0; /* Espaçamento vertical */
+    padding: 5px 0; /* Ajusta o padding para reduzir a altura */
+    height: auto; /* Garante que a altura seja ajustada automaticamente */
+    flex: 1; /* Garante que o contêiner ocupe o mesmo espaço que os outros */
+    width: 100%; /* Garante que a largura seja igual aos outros contêineres */
+    opacity: 1;
+    transition: opacity 0.2s ease-out !important; /* Alterado de 0.1s para 0.2s */
+    will-change: opacity;
+}
+
+#translation-toggle.fade-out {
+    opacity: 0 !important;
+    transition: opacity 0.2s ease-out !important; /* Alterado de 0.1s para 0.2s */
+}
+
+#translation-toggle.fade-in {
+    opacity: 1 !important;
+    transition: opacity 0.2s ease-in !important; /* Alterado de 0.1s para 0.2s */
+}
+
+@media (max-width: 480px) {
+    #text-container.normal #translation-toggle {
+        display: none !important; /* Garante que o toggle não apareça no modo normal */
+    }
+}
+
+@media (max-width: 480px) {
+    #text-container.verse-by-verse .text-column {
+        margin-bottom: 5px !important; /* Reduz ainda mais o espaçamento e usa !important para garantir a aplicação */
+    }
+}
+
+#text-container.verse-by-verse {
+    gap: 5px !important; /* Reduz ainda mais o espaço entre os contêineres no modo verso por verso */
+}
+
+@media (min-width: 1024px) {
+    #text-container.verse-by-verse .text-column,
+    #translation-toggle {
+        max-width: 55%; /* Aumenta um pouco a largura */
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1023px) {
+    #text-container.verse-by-verse .text-column,
+    #translation-toggle {
+        max-width: 55%; /* Largura proporcional para tablets */
+    }
+}
+
+#text-container.verse-by-verse .text-column {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Atualizar as classes de transição */
+.fade-out {
+    opacity: 0 !important;
+    transition: opacity 0.2s ease-out !important; /* Alterado de 0.1s para 0.2s */
+}
+
+.fade-in {
+    opacity: 1 !important;
+    transition: opacity 0.2s ease-in !important; /* Alterado de 0.1s para 0.2s */
+}
+
+/* Garantir que a transição seja aplicada mesmo quando o elemento está com display: none */
+#portuguese-text {
+    transition: opacity 0.2s ease-out !important; /* Alterado de 0.1s para 0.2s */
+    will-change: opacity;
+}
+
+/* Novo container pai fixo na parte inferior */
+.bottom-container {
+    width: 100vw;
+    background-color: #242423;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.07); /* Nova linha: adiciona borda branca com 30% de opacidade */
+    border-bottom: none; /* Remove a borda inferior */
+    padding: 5px; /* Reduzido de 10px para 5px */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    height: auto; /* Permite que a altura se ajuste ao conteúdo */
+    min-height: min-content; /* Garante altura mínima baseada no conteúdo */
+}
+
+/* Ajuste para telas móveis */
+@media (max-width: 768px) {
+    #text-container {
+        width: 95%; /* Alterado de 98% para 95% */
+        padding: 0 8px; /* Reduzir o padding lateral */
+    }
+
+    .text-column {
+        padding: 10px 5px; /* Reduzir o padding lateral */
+    }
+
+    main {
+        padding: 20px 5px; /* Reduzir o padding lateral do container principal */
+    }
+}
+
+/* Ajuste específico para telas muito pequenas */
+@media (max-width: 480px) {
+    #text-container {
+        width: 95%; /* Alterado de 100% para 95% */
+        padding: 0 5px; /* Padding lateral mínimo */
+    }
+
+    .text-column {
+        padding: 8px 3px; /* Padding lateral ainda menor */
+    }
+
+    main {
+        padding: 20px 3px; /* Padding lateral mínimo */
+    }
+
+    .text-content {
+        padding: 0 2px; /* Padding lateral mínimo para o texto */
+    }
+}
+
+/* Ajuste específico para o botão de play */
+#play-english::before,
+.play-button::before {
+    content: '▶';
+    color: #cf6270;
+    font-size: 16px;
+    transition: none;
+}
+
+#play-english.playing::before,
+.play-button.playing::before {
+    content: '▶'; /* Mantenha o ícone de play */
+    color: #cf6270;
+    font-size: 16px;
+    transition: none;
+}
+
+.lesson-card[data-number="1"] {
+    transition: opacity 0.2s ease-out !important; /* Alterado de 0.1s para 0.2s */
+}
+
+/* Ajustes específicos para o modo vertical */
+#text-container.verse-by-verse {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 55%;
+    max-width: 550px; /* Nova linha: limita a largura máxima */
+    margin: 60px auto 20px;
+}
+
+#text-container.verse-by-verse .text-column {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    opacity: 1;
+}
+
+.translation-container {
+    transition: opacity 0.2s ease-out;
+    opacity: 0;
+    display: none;
+}
+
+.translation-container.visible {
+    opacity: 1;
+    display: block;
+}
+
+#translation-toggle {
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px 0;
+    cursor: pointer;
+    text-align: center;
+    font-size: 14px;
+    color: rgba(238, 238, 238, 0.3) !important;
+    display: block;
+    user-select: none;
+}
+
+#translation-toggle:hover {
+    color: rgba(238, 238, 238, 0.5) !important;
+}
+
+/* Responsividade para o modo vertical */
+@media (max-width: 768px) {
+    #text-container.verse-by-verse {
+        width: 95%;
+    }
+}
+
+/* Ajuste para o botão toggle-display */
+#toggle-display {
+    width: 45px;
+    height: 45px;
+    transition: border-color 0.3s ease; /* Tornar a transição da borda suave como as outras */
+}
+
+#toggle-display:active,
+#toggle-display.active {
+    border-color: transparent !important;
+    border: 1px solid rgba(204, 204, 204, 0) !important; /* Mantém a borda mas com opacidade 0 */
+    outline: none !important;
+    transition: all 0.3s ease !important; /* Mesma transição suave */
+}
+
+/* Ajuste para telas menores na vertical */
+@media (max-width: 480px) and (orientation: portrait) {
+    .play-button,
+    #play-alternate,
+    #toggle-display { /* Adicionar #toggle-display aqui */
+        width: 55px; /* Mesmo tamanho dos outros botões em telas pequenas */
+        height: 55px; /* Mesmo tamanho dos outros botões em telas pequenas */
+        font-size: 18px;
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Ocultar barras de rolagem em todos os elementos com rolagem */
+body, 
+main, 
+.text-content, 
+.text-column, 
+#text-container,
+.scroll-container {
+    /* Para Firefox */
+    scrollbar-width: none;
+    /* Para IE e Edge */
+    -ms-overflow-style: none;
+}
+
+/* Para Chrome, Safari e Opera */
+body::-webkit-scrollbar, 
+main::-webkit-scrollbar, 
+.text-content::-webkit-scrollbar, 
+.text-column::-webkit-scrollbar,
+#text-container::-webkit-scrollbar,
+.scroll-container::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+    background: transparent;
+}
+
+/* Adicione estes estilos ao final do arquivo */
+
+/* Modificar o estilo do contador de versos */
+
+/* Contador de versos para modo vertical */
+.verse-counter {
+    position: fixed;
+    top: 20px; /* Aumentado de 12px para 20px para posicionar mais baixo */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(27, 27, 27, 0.8);
+    color: rgba(255, 255, 255, 0.85);
+    padding: 6px 14px;
+    border-radius: 16px;
+    font-size: 14px;
+    z-index: 100;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    transition: opacity 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Adicionada borda branca semitransparente */
+}
+
+/* Ajuste para a contagem em dispositivos móveis */
+@media (max-width: 768px) {
+    .verse-counter {
+        top: 16px; /* Aumentado de 8px para 16px */
+        font-size: 14px; /* Aumentado de 12px para 14px */
+        padding: 6px 16px; /* Aumentado de 4px 10px para 6px 16px */
+    }
+}
+
+/* Adicione estas regras no final do arquivo CSS */
+
+/* Estilo padrão dos botões - todos com borda */
+.play-button {
+    border: 1px solid rgba(204, 204, 204, 0.2);
+    transition: border 0.3s ease, transform 0.3s ease;
+}
+
+/* Por padrão, o botão toggle-display começa sem borda */
+#toggle-display {
+    border: 1px solid rgba(204, 204, 204, 0);
+}
+
+/* Classe para botões ativos (sem borda) */
+.play-button.active-button {
+    border: 1px solid rgba(204, 204, 204, 0) !important;
+    outline: none !important;
+}
+
+

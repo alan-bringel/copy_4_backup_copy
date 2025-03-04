@@ -1,0 +1,2 @@
+# Redireciona todas as requisições não encontradas para index.html
+/* /index.html 200

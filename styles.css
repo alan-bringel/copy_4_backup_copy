@@ -1,0 +1,671 @@
+/* Corpo da página */
+body {
+    font-family: 'Open Sans', sans-serif; /* Usar a fonte Open Sans */
+    margin: 0;
+    padding: 0;
+    background-color: #2b2b2b; /* Cor de fundo ajustada para corresponder à página lesson */
+    color: #cccccc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Alinhar o conteúdo ao topo */
+    min-height: 100vh; /* Garantir que o conteúdo ocupe toda a altura da tela */
+    overflow-x: hidden; /* Impedir a rolagem horizontal na página */
+    padding-top: 50px; /* Adicionar padding superior para posicionar todos os elementos mais para baixo */
+}
+
+.header-container {
+    text-align: center;
+    position: relative; /* Permitir ajuste de posição */
+    top: 50px; /* Ajustar a posição das frases para baixo */
+    margin-bottom: 80px; /* Adicionar margem inferior para espaçamento com os cards */
+}
+
+.header-container h1 {
+    font-size: 2rem;
+    font-weight: 100; /* Fonte mais grossa */
+    color: #cccccc;
+    opacity: 0.9; /* 90% de opacidade */
+    margin-bottom: 10px; /* Reduzir a margem inferior */
+}
+
+.header-container h1 strong {
+    font-weight: 400;
+}
+
+.header-container p {
+    font-size: 1.2rem;
+    font-weight: 300; /* Fonte mais grossa */
+    color: #cccccc;
+    opacity: 0.9; /* 90% de opacidade */
+}
+
+.header-container p span {
+    opacity: 0.7;
+}
+
+.scroll-wrapper {
+    display: flex; /* Posicionar os containers lado a lado */
+    flex-direction: column; /* Colocar os containers em coluna */
+    gap: 20px; /* Espaçamento entre os containers */
+    width: 100%; /* Ajustar automaticamente à largura das telas de celular */
+    max-width: 100vw; /* Garantir que não ultrapasse a largura da tela */
+    padding: 0 0px; /* Aumentar as margens direita e esquerda */
+    overflow-x: hidden; /* Impedir a rolagem horizontal na página */
+    margin-top: 40px; /* Posicionar os containers mais para baixo */
+}
+
+.scroll-container {
+    width: 100%; /* Largura do container */
+    height: 160px; /* Garantir altura suficiente para visualizar os cards */
+    overflow-x: auto; /* Rolagem horizontal */
+    overflow-y: hidden; /* Sem rolagem vertical */
+    white-space: nowrap; /* Impedir quebra de linha */
+    padding: 0 0px; /* Aumentar as margens internas laterais */
+    scroll-snap-type: x mandatory; /* Habilitar snap para rolagem suave */
+    -ms-overflow-style: none;  /* Ocultar barra de rolagem no IE e Edge */
+    scrollbar-width: none;  /* Ocultar barra de rolagem no Firefox */
+}
+
+.scroll-container::-webkit-scrollbar {
+    display: none;  /* Ocultar barra de rolagem no Chrome, Safari e Opera */
+}
+
+.lessons-container {
+    display: inline-flex; /* Mudar para inline-flex para rolagem horizontal */
+    flex-wrap: nowrap; /* Impedir quebra de linha */
+    justify-content: flex-start; /* Alinhar os cards à esquerda */
+    align-items: center; /* Centralizar os cards verticalmente */
+    gap: 20px; /* Espaço entre os cards */
+    width: auto; /* Permitir que os cards ocupem a largura necessária */
+    height: 100%; /* Ocupa toda a altura do container */
+    padding: 0 0px; /* Adicionar padding para permitir rolagem extra */
+}
+
+.lesson-card {
+    border: 1px solid rgba(204, 204, 204, 0.2); /* Aumentar opacidade das bordas */
+    border-radius: 17px;
+    width: 220px; /* Aumentar a largura dos cards */
+    height: 140px;
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, background-color 0.3s ease, opacity 0.3s ease; /* Adiciona transição suave */
+    opacity: 0.9; /* 90% de opacidade */
+    -webkit-user-select: none; /* Desativa a seleção de texto no Safari */
+    -moz-user-select: none; /* Desativa a seleção de texto no Firefox */
+    -ms-user-select: none; /* Desativa a seleção de texto no IE */
+    user-select: none; /* Desativa a seleção de texto nos navegadores modernos */
+    -webkit-tap-highlight-color: transparent; /* Remove o destaque ao toque no Android */
+    scroll-snap-align: center; /* Alinhar os cards ao centro durante a rolagem */
+    position: relative; /* Adicionar para posicionamento absoluto dos elementos internos */
+}
+
+.lesson-card:hover {
+    transform: translateY(-5px);
+    background-color: rgba(255, 255, 255, 0.1); /* Leve mudança de cor ao passar o mouse */
+}
+
+.lesson-card:active {
+    transform: translateY(-2px); /* Leve ajuste ao clicar */
+    background-color: rgba(255, 255, 255, 0.2); /* Leve mudança de cor ao clicar */
+}
+
+.lesson-card::before {
+    content: '';
+    display: block;
+    width: 25px;
+    height: 25px;
+    background: url('images/diamond.png') center / contain no-repeat; /* Usa o PNG como imagem de fundo */
+    position: absolute; /* Posicionar no canto superior direito */
+    top: 10px;
+    right: 10px;
+}
+
+.lesson-card::after {
+    content: attr(data-number); /* Usar o atributo data-number para exibir o número */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    border-radius: 50%;
+    position: absolute; /* Posicionar no centro do card */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+    color: #ffffff; /* Cor do texto branco */
+    border: 1px solid rgba(204, 204, 204, 0.5);
+}
+
+.lesson-card span {
+    margin-top: 80px; /* Aumentar o espaçamento para posicionar mais abaixo */
+    display: block;
+}
+
+.lesson-card {
+    font-size: 1.2rem;
+    font-weight: 300; /* Fonte mais fina */
+    color: #cccccc;
+}
+
+/* Centralize the "Failed to load text" text */
+.failed-text {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Ensure it's centered vertically */
+}
+
+button {
+    border: 2px solid #ccc; /* cor padrão */
+    /* ...outros estilos... */
+}
+
+button.active {
+    border-color: #282929; /* cor quando clicado */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .scroll-wrapper {
+        gap: 0px; /* Aproximar mais os containers em telas de celular */
+    }
+
+    .divider {
+        display: block; /* Mostrar a linha em telas de celular */
+    }
+
+    .lessons-container {
+        grid-template-columns: repeat(2, 1fr); /* Dois cards por linha em telas menores */
+        justify-content: center; /* Centralizar os cards em telas menores */
+        gap: 20px; /* Ajustar o espaço entre os cards em telas menores */
+    }
+
+    .lesson-card {
+        width: 180px; /* Ajustar a largura dos cards em telas menores */
+        height: 120px; /* Ajustar a altura dos cards em telas menores */
+    }
+}
+
+@media (max-width: 480px) and (orientation: landscape) {
+    .lessons-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; /* Centralizar os cards horizontalmente */
+        align-items: center; /* Centralizar os cards verticalmente */
+        gap: 20px; /* Ajustar espaço entre os cards */
+        padding: 10px;
+        width: 100%; /* Ocupa toda a largura disponível */
+        box-sizing: border-box; /* Garantir que o padding não cause overflow */
+        margin: 0 auto; /* Centralizar o contêiner */
+    }
+
+    .lesson-card {
+        width: 180px; /* Ajustar largura dos cards */
+        height: 120px; /* Ajustar altura dos cards */
+        margin: 10px; /* Espaçamento ao redor dos cards */
+    }
+}
+
+/* Ajuste para telas menores na horizontal */
+@media (max-width: 768px) and (orientation: landscape) {
+    body {
+        overflow-x: hidden; /* Impede a rolagem horizontal */
+    }
+
+    .lessons-container {
+        display: flex; /* Mudar para flex */
+        flex-wrap: wrap; /* Permitir quebra de linha */
+        justify-content: center; /* Centralizar os cards horizontalmente */
+        align-items: center; /* Centralizar os cards verticalmente */
+        gap: 20px; /* Ajustar espaço entre os cards */
+        padding: 10px; /* Espaço interno */
+        width: 100%; /* Ocupa toda a largura disponível */
+        box-sizing: border-box; /* Garantir que o padding não cause overflow */
+        margin: 0 auto; /* Centralizar o contêiner */
+    }
+
+    .lesson-card {
+        width: 180px; /* Ajustar largura dos cards */
+        height: 120px; /* Ajustar altura dos cards */
+        margin: 10px; /* Espaçamento ao redor dos cards */
+    }
+}
+
+@media (max-width: 480px) and (orientation: landscape) {
+    .lessons-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; /* Centralizar os cards horizontalmente */
+        align-items: center; /* Centralizar os cards verticalmente */
+        gap: 20px; /* Ajustar espaço entre os cards */
+        padding: 10px;
+        width: 100%; /* Ocupa toda a largura disponível */
+        box-sizing: border-box; /* Garantir que o padding não cause overflow */
+        margin: 0 auto; /* Centralizar o contêiner */
+    }
+
+    .lesson-card {
+        width: 180px; /* Ajustar largura dos cards */
+        height: 120px; /* Ajustar altura dos cards */
+        margin: 10px; /* Espaçamento ao redor dos cards */
+    }
+}
+
+/* Responsividade para telas maiores */
+@media (min-width: 1024px) {
+    .scroll-wrapper {
+        gap: 2px; /* Diminuir a distância entre os containers em telas grandes */
+    }
+
+    .lessons-container {
+        flex-basis: calc(25% - 20px); /* 4 cards por linha, considerando o espaço entre eles */
+    }
+}
+
+/* Adicione ou atualize a regra dos botões ativos para telas de computador */
+@media (min-width: 768px) {
+    button.active {
+        border-color: #282929 !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .lessons-container {
+        flex-direction: row; /* Alinha os cards horizontalmente */
+        align-items: center; /* Centraliza os cards */
+        padding: 0 10px; /* Adiciona padding nas laterais */
+        gap: 15px; /* Espaçamento entre os cards */
+    }
+
+    .lesson-card {
+        width: 220px; /* Mantém a largura atual dos cards */
+        height: 140px; /* Mantém a altura atual dos cards */
+        margin: 2px 0; /* Espaçamento entre os cards */
+        box-sizing: border-box; /* Garante que padding e bordas sejam considerados na largura */
+    }
+}
+
+@media (max-width: 480px) and (orientation: portrait) {
+    .lesson-card {
+        width: 140px; /* altura atual */
+        height: 220px; /* largura atual */
+    }
+
+    .scroll-wrapper {
+        gap: 40px; /* gap aumentado para separar os containers pai */
+        
+        
+    }
+
+    .scroll-container {
+        height: 240px; /* altura aumentada para telas em posição vertical */
+        padding: 0 12px; /* Assegura que o card da extrema esquerda e direita fiquem a 20px da tela */
+    }
+
+    .lessons-container {
+        gap: 22px; /* gap entre os cards ajustado para 12px */
+    }
+
+    .lessons-container::after {
+        content: "";
+        flex: 0 0 2px; /* Espaço extra de 20px à direita */
+    }
+
+    .header-container {
+        align-self: flex-start;
+        width: 100%;
+        margin-right: 108px;
+        text-align: left;
+    }
+}
+
+/* Remova ou comente as regras de fade-out abaixo, pois elas não serão utilizadas neste contexto */
+/*
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+body.transitioning {
+    animation: fadeOut 0.3s ease-out forwards;
+}
+*/
+
+/* Mantenha a animação de fade-in para a página da lição */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Adicionar ao final do arquivo */
+
+/* Ocultar barras de rolagem em todos os elementos com rolagem */
+body, 
+main, 
+.lessons-container, 
+.scroll-container {
+    /* Para Firefox */
+    scrollbar-width: none;
+    /* Para IE e Edge */
+    -ms-overflow-style: none;
+}
+
+/* Para Chrome, Safari e Opera */
+body::-webkit-scrollbar, 
+main::-webkit-scrollbar, 
+.lessons-container::-webkit-scrollbar, 
+.scroll-container::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+    background: transparent;
+}
+
+/* Adicionar estas regras logo após as regras existentes de ocultação de barras de rolagem */
+
+/* Regras mais abrangentes para ocultar barras de rolagem */
+html, 
+body, 
+main, 
+.scroll-wrapper,
+.lessons-container, 
+.scroll-container,
+div {
+    /* Para Firefox */
+    scrollbar-width: none !important;
+    /* Para IE e Edge */
+    -ms-overflow-style: none !important;
+}
+
+/* Para Chrome, Safari e Opera - regras mais específicas */
+html::-webkit-scrollbar, 
+body::-webkit-scrollbar, 
+main::-webkit-scrollbar, 
+.scroll-wrapper::-webkit-scrollbar,
+.lessons-container::-webkit-scrollbar, 
+.scroll-container::-webkit-scrollbar,
+div::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    background: transparent !important;
+}
+
+/* Garantir que o corpo da página não cause overflow */
+html, body {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+}
+
+/* Estilos para o popup de acesso limitado */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.popup-content {
+    background-color: #242423;
+    border: 1px solid rgba(204, 204, 204, 0.2);
+    border-radius: 17px;
+    padding: 30px;
+    max-width: 85%;
+    width: 320px;
+    position: relative;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transform: scale(0.9);
+    transition: transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.popup-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    color: rgba(204, 204, 204, 0.5);
+    transition: color 0.2s ease;
+}
+
+.popup-close:hover {
+    color: rgba(204, 204, 204, 0.8);
+}
+
+.popup-content h2 {
+    font-size: 2rem;
+    font-weight: 100; /* Fonte mais grossa */
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #cccccc;
+    font-weight: 400;
+}
+
+.popup-content p {
+    color: #cccccc;
+    opacity: 0.9;
+    font-size: 15px;  /* Reduzido de 16px para 14px */
+    line-height: 1.5;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.popup-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.popup-button {
+    background: linear-gradient(90deg, #cf6270, #8576d6);
+    border: none;
+    border-radius: 20px;
+    padding: 10px 18px;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.popup-button:hover {
+    transform: translateY(-2px);
+}
+
+.popup-button.secondary {
+    background: transparent;
+    border: 1px solid rgba(204, 204, 204, 0.2);
+    color: #cccccc;
+}
+
+.popup-open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup-open .popup-content {
+    transform: scale(1);
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 480px) {
+    .popup-content {
+        padding: 25px 20px;
+        width: 85%;
+    }
+    
+    .popup-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .popup-button {
+        width: 100%;
+    }
+}
+
+/* Adicione estas regras ao final do arquivo styles.css */
+.popup-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.popup-buttons-row {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+}
+
+/* Ajuste para telas menores */
+@media (max-width: 480px) {
+    .popup-buttons-row {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+    
+    .popup-button {
+        width: 100%;
+    }
+}
+
+/* Adicione ao final do arquivo */
+
+.price-button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.price-tag {
+    color: #cccccc;
+    font-size: 14px;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+/* Ajuste para garantir que os botões com preços sejam do mesmo tamanho */
+.price-button-container .popup-button {
+    width: 100%;
+}
+
+/* Ajuste para telas menores */
+@media (max-width: 480px) {
+    .price-button-container {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+}
+
+/* Substitua .popup-buttons-row por .popup-buttons-column */
+.popup-buttons-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+/* Ajuste para telas menores */
+@media (max-width: 480px) {
+    .popup-buttons-column {
+        gap: 10px;
+    }
+}
+
+/* Adicione esta regra para que o botão "Assinar Agora" tenha a mesma largura dos botões acima */
+.popup-buttons > .popup-button {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Opcional: Para garantir que o botão "Assinar Agora" fique centralizado e com a mesma aparência */
+.popup-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.popup-buttons-column {
+    width: 100%;
+}
+
+/* Estilos para o botão de login no canto superior direito */
+.user-login-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+
+.user-login-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(204, 204, 204, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.user-login-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+.login-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.user-login-button img.user-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+  .user-login-container {
+    top: 15px;
+    right: 15px;
+  }
+  
+  .user-login-button {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+

@@ -1,0 +1,14 @@
+# Todos os arquivos
+/*
+  Access-Control-Allow-Origin: *
+
+# Permitir CORS para arquivos de áudio e legendas
+/audios/*
+  Access-Control-Allow-Origin: *
+  Access-Control-Allow-Methods: GET
+  Access-Control-Allow-Headers: *
+
+/subtitles/*
+  Access-Control-Allow-Origin: *
+  Access-Control-Allow-Methods: GET
+  Access-Control-Allow-Headers: *

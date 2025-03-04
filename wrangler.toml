@@ -1,0 +1,41 @@
+name = "parallel-reading"
+compatibility_date = "2023-05-30"
+
+# Usar a pasta functions como base para as funções
+[build]
+command = ""
+
+[build.upload]
+format = "modules"
+main = "./functions/_middleware.js" 
+
+# Definir rotas para as funções específicas
+[[routes]]
+pattern = "/api/reviews"
+module = "./functions/api/reviews.js"
+
+[[routes]]
+pattern = "/api/image-proxy"
+module = "./functions/api/image-proxy.js"
+
+[[routes]]
+pattern = "/api/google-image"
+module = "./functions/api/image-proxy.js"
+
+[vars]
+ENVIRONMENT = "production"
+FIREBASE_PROJECT_ID = "reviews-smartplay-br"
+FIREBASE_CLIENT_EMAIL = "firebase-adminsdk-j01n4@reviews-smartplay-br.iam.gserviceaccount.com"
+FIREBASE_PRIVATE_KEY_ID = "1cb9f6256cbd156051e317d92c8bad5ab99c2b02"
+FIREBASE_CLIENT_ID = "116873322035904762623"
+FIREBASE_CLIENT_X509_CERT_URL = "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-j01n4%40reviews-smartplay-br.iam.gserviceaccount.com"
+FIREBASE_PRIVATE_KEY = "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDHLKp9AhMp7fMu\nRzXh1lo0RiAkjoc6P5KRezS93wxS5vLmbfQc3RvU8yrEuWn6zdYqVuxASvYasTln\nNBa1V/oDtfAYmo8Lh162YiiX7OmH5tQCXukDkM+ntcwyhdGgbhp5443nMQPUj1/x\nyRhszurS1kbWtteRIx4DUm9tkcPMAdUOvvck5Rvq/C6RLoJva8bcY/LP6RI1WLw/\nkR8sFt+7WgUwr2h/GpEc7jfzE7mKoJCVRmJeyYH6+6N25CEsimY8w6qmwTIlRGLe\noX7VgWd2uNWWBHKnShCllK97VMTk3sppHp0MeZroBkTFE9x9lL3ISCdXCEzknigW\n1nqsvOqRAgMBAAECggEAF+nMdGLV4zBfBJznIrzGKsWKoWj9Ymh0lAP7YpqPk7qH\nylPEPdzsNQaXCXSLfWHOR1oVVmjJoI3LqxDtcwtjiKOE9qdD6mnv3KzvW8JFjZwQ\ns1Iq3tM5o1Sn9h7r+ruNcTn5dRsE7zXhmpl+1b2IIxU3/xqHyjSxq0tv9nNMU0dk\ny+/4hXhl1DA5rv0Cv/SrnGdaBBuD4gvxIKxmB19MLQn5QuQuxvYLbfC068bUw84x\naNDIZ2rBjjnLd82AolEEgDAnAPfBH5ITpgEL4Yy51mdF+tF0Io3innfChfYfyO6v\nKayLjuAKakO2xk+7kgNfqPYwyEs9rmXqg6JnJunIAwKBgQDn2UKVeyJm5uhvwqFR\nRZWoxTrm7VYlYhEgk12EQZVUF6ZSdl0IrYuF9ygy2q/a2KWE6EK9gOITRSHfFmmF\nrgoiwDjID0mzpgbglAM0c2/EoKPDwb7PUCr/lEHQKERHuG5LyUlO9XhwP07YSU8v\nTT45g+syugWl/C7DHAdfAXBrnwKBgQDb7BQkMMhXluemCnlrXodyPUKB7C/bYniV\nY8MTtXrfz/HDx8sB//WMR1QnFBIwoTGuSNEs54/I3WbMko0KWJfTIx2cXIWHqUj0\nPfCO+sR3nA2KqRFnq9de4SCbPPwZD+x3ITN4LRvV8d3lFtAEzAj24E6mBqqUw+li\n8dUFJQ/7zwKBgGPpOkpUf+S8SRowU3hEdlP+en2ddWwysJLLLpeZ85IDhwcuPrVI\npEGc2tPfbbzvc5SsymYDrmkDd689Z0fWUkPbdhywieBDAd+xqRfnTxj66NepHGMW\ndxEggKQFVjdaAR3jphXCrp4gigemv9rwfIookSiRBXIcFMK7x2lno1ydAoGACHWv\nXKkHu97RMGDsxMWRHkLfARJt0Nmb29tHkMWFYYClQyu3Um9fKbNAuHQcMwSwXYzt\nhvWtYUOrBamJhWFdDcEnDXG9rTdE2ChdzZI15of5OWFBiyRgF4U/dNlGtUwYg4ii\nazgI/xTbvUlAXT7gBWchf194Rlq26ph04krHr58CgYEAppYcg0U3W9HFmuvt5XZ6\nPmkMF7z6K8PQQyg+/htX2St+U8HvnbSxlW5ZT+aM/MS/wYpSyhWewb3YzjjA0RmR\nl83ZcPXucWmzUxtaZS1tf29BXgE73ovnKtToG1/mVlqNv2qBfwZwtjEMp7zZboQb\naT755zHGNQ1Co3L6MGhkDgY=\n-----END PRIVATE KEY-----\n"
+
+[env.development.vars]
+ENVIRONMENT = "development"
+FIREBASE_PROJECT_ID = "reviews-smartplay-br"
+FIREBASE_CLIENT_EMAIL = "firebase-adminsdk-j01n4@reviews-smartplay-br.iam.gserviceaccount.com"
+FIREBASE_PRIVATE_KEY_ID = "1cb9f6256cbd156051e317d92c8bad5ab99c2b02"
+FIREBASE_CLIENT_ID = "116873322035904762623"
+FIREBASE_CLIENT_X509_CERT_URL = "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-j01n4%40reviews-smartplay-br.iam.gserviceaccount.com"
+FIREBASE_PRIVATE_KEY = "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDHLKp9AhMp7fMu\nRzXh1lo0RiAkjoc6P5KRezS93wxS5vLmbfQc3RvU8yrEuWn6zdYqVuxASvYasTln\nNBa1V/oDtfAYmo8Lh162YiiX7OmH5tQCXukDkM+ntcwyhdGgbhp5443nMQPUj1/x\nyRhszurS1kbWtteRIx4DUm9tkcPMAdUOvvck5Rvq/C6RLoJva8bcY/LP6RI1WLw/\nkR8sFt+7WgUwr2h/GpEc7jfzE7mKoJCVRmJeyYH6+6N25CEsimY8w6qmwTIlRGLe\noX7VgWd2uNWWBHKnShCllK97VMTk3sppHp0MeZroBkTFE9x9lL3ISCdXCEzknigW\n1nqsvOqRAgMBAAECggEAF+nMdGLV4zBfBJznIrzGKsWKoWj9Ymh0lAP7YpqPk7qH\nylPEPdzsNQaXCXSLfWHOR1oVVmjJoI3LqxDtcwtjiKOE9qdD6mnv3KzvW8JFjZwQ\ns1Iq3tM5o1Sn9h7r+ruNcTn5dRsE7zXhmpl+1b2IIxU3/xqHyjSxq0tv9nNMU0dk\ny+/4hXhl1DA5rv0Cv/SrnGdaBBuD4gvxIKxmB19MLQn5QuQuxvYLbfC068bUw84x\naNDIZ2rBjjnLd82AolEEgDAnAPfBH5ITpgEL4Yy51mdF+tF0Io3innfChfYfyO6v\nKayLjuAKakO2xk+7kgNfqPYwyEs9rmXqg6JnJunIAwKBgQDn2UKVeyJm5uhvwqFR\nRZWoxTrm7VYlYhEgk12EQZVUF6ZSdl0IrYuF9ygy2q/a2KWE6EK9gOITRSHfFmmF\nrgoiwDjID0mzpgbglAM0c2/EoKPDwb7PUCr/lEHQKERHuG5LyUlO9XhwP07YSU8v\nTT45g+syugWl/C7DHAdfAXBrnwKBgQDb7BQkMMhXluemCnlrXodyPUKB7C/bYniV\nY8MTtXrfz/HDx8sB//WMR1QnFBIwoTGuSNEs54/I3WbMko0KWJfTIx2cXIWHqUj0\nPfCO+sR3nA2KqRFnq9de4SCbPPwZD+x3ITN4LRvV8d3lFtAEzAj24E6mBqqUw+li\n8dUFJQ/7zwKBgGPpOkpUf+S8SRowU3hEdlP+en2ddWwysJLLLpeZ85IDhwcuPrVI\npEGc2tPfbbzvc5SsymYDrmkDd689Z0fWUkPbdhywieBDAd+xqRfnTxj66NepHGMW\ndxEggKQFVjdaAR3jphXCrp4gigemv9rwfIookSiRBXIcFMK7x2lno1ydAoGACHWv\nXKkHu97RMGDsxMWRHkLfARJt0Nmb29tHkMWFYYClQyu3Um9fKbNAuHQcMwSwXYzt\nhvWtYUOrBamJhWFdDcEnDXG9rTdE2ChdzZI15of5OWFBiyRgF4U/dNlGtUwYg4ii\nazgI/xTbvUlAXT7gBWchf194Rlq26ph04krHr58CgYEAppYcg0U3W9HFmuvt5XZ6\nPmkMF7z6K8PQQyg+/htX2St+U8HvnbSxlW5ZT+aM/MS/wYpSyhWewb3YzjjA0RmR\nl83ZcPXucWmzUxtaZS1tf29BXgE73ovnKtToG1/mVlqNv2qBfwZwtjEMp7zZboQb\naT755zHGNQ1Co3L6MGhkDgY=\n-----END PRIVATE KEY-----\n"
